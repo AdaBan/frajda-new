@@ -1,0 +1,45 @@
+{
+    "title": "About us",
+    "description": {
+        "lead": "We are a product designer and a UI-oriented front-end developer duo.",
+        "body": "Our goal is to deliver high quality and accessible interfaces that solve business problems and offer a great experience to the users.",
+        "small": "We believe that creating a digital products is solving specific problems and satisfying users' needs."
+    },
+    "subtitle": "Get to know us better",
+    "team": [
+        {
+            "name": "Paulina Jadeszko",
+            "role": "Co-founder & Product Designer",
+            "links": [
+                {
+                    "name": "Dribble",
+                    "href": "https://dribbble.com/PaulinaJadeszko"
+                },
+                {
+                    "name": "Instagram",
+                    "href": "https://www.instagram.com/pjadeszko/"
+                },
+                {
+                    "name": "LinkedIn",
+                    "href": "https://www.linkedin.com/in/paulina-jadeszko/"
+                }
+            ],
+            "description": "I am a Product Designer with over 5 years of experience that I have gained in small agencies, software houses and startups. At that time, I had the opportunity to design mobile applications, web applications and websites for organizations of all sizes from industries such as e-commerce, FinTech, aviation and education. My goal is to maintain a high standard of usability, and user experience and take care of every detail of the visual part of the project."
+        },
+        {
+            "name": "Ada Banaszak",
+            "role": "Co-founder & Web Developer",
+            "links": [
+                {
+                    "name": "Github",
+                    "href": "https://github.com/AdaBan"
+                },
+                {
+                    "name": "Instagram",
+                    "href": "https://www.instagram.com/ada.banaszak/"
+                }
+            ],
+            "description": "A graduate of cultural studies, but a programmer by profession. I have gained experience in Saatchi & Saatchi IS and SYZYGY agencies for clients such as Microsoft, Mercedes-Benz and the Polish Football Association."
+        }
+    ]
+}

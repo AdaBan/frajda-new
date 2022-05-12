@@ -12,6 +12,7 @@ module.exports = config => {
 
   // https://www.11ty.dev/docs/copy/
   config.addPassthroughCopy('./src/assets/');
+  config.addPassthroughCopy('./src/fonts/');
 
   return {
     markdownTemplateEngine: 'njk',

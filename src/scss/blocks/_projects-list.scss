@@ -1,0 +1,9 @@
+.projects-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    &__item {
+        margin: 0 0 5rem;
+    }
+}

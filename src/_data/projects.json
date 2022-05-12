@@ -1,0 +1,27 @@
+{
+    "title": "Recent projects",
+    "items": [
+      {
+        "name": "AR Configurator",
+        "client": "VRxs (Augmenteers)",
+        "description": "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.",
+        "tags": ["UX design", "Front-end development"],
+        "live-href": "https://vrxs.de/3d-product-configurator/cabinet/"
+      },
+      {
+        "name": "SaaS startup branding",
+        "client": "VRxs (Augmenteers)",
+        "description": "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.",
+        "tags": ["Brand identity"],
+        "live-href": ""
+      },
+      {
+        "name": "SaaS website redesign",
+        "client": "Demoboost",
+        "description": "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.",
+        "tags": ["Brand identity"],
+        "live-href": ""
+      }
+    ]
+  }
+  

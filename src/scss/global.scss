@@ -1,5 +1,3 @@
-// First up: config and functions
-$generate-utility-classes: false;
 @import 'config';
 
 // Next: pull in gorko for design tokens
@@ -8,9 +6,28 @@ $generate-utility-classes: false;
 @import 'reset';
 
 // Global styles start
+// @font-face {
+//   font-family: 'Euclid Circular';
+//   src: url('../fonts/euclidcircularb-medium-webfont.woff2') format('woff2'),
+//     url('../fonts/euclidcircularb-medium-webfont.woff') format('woff');
+//   font-weight: 500;
+//   font-style: normal;
+// }
+
+@font-face {
+  font-family: 'Euclid Circular';
+  src: url('../fonts/euclidcircularb-regular-webfont.woff2') format('woff2'),
+    url('../fonts/euclidcircularb-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
-  line-height: 1.5;
+  background: get-color('light');
+  color: get-color('dark');
   @include apply-utility('font', 'base');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a:not([class]) {
@@ -30,7 +47,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-weight: 900;
+  font-weight: 400;
 
   @include apply-utility('font', 'sans');
   @include apply-utility('leading', 'flat');
@@ -41,9 +58,21 @@ h4 {
   background: rgba(get-color('dark-shade'), 0.99);
 }
 
-// Import blocks
-
 // Import utilities
+@import 'utilities/button-reset';
 @import 'utilities/container';
+@import 'utilities/no-wrap';
 @import 'utilities/visually-hidden';
+
+
+// Import blocks
+@import 'blocks/hero';
+@import 'blocks/section';
+@import 'blocks/project';
+@import 'blocks/projects-list';
+@import 'blocks/services-list';
+@import 'blocks/site-head';
+@import 'blocks/tag';
+@import 'blocks/tags-list';
+
 

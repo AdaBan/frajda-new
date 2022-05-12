@@ -30,13 +30,13 @@ $gorko-size-scale: (
  * You can also use them to power borders, fills or shadows, for example.
  */
 $gorko-colors: (
-  'dark': #38445b,
+  'dark': #1C1A1A, // frajda
   'dark-shade': #263147,
-  'dark-glare': #505c73,
-  'light': #efefef,
-  'light-shade': #fdfdfd,
-  'light-glare': #fdfbf3,
-  'primary': #513aa6
+  'dark-glare': #878787, // frajda
+  'light': #fff, // frajda
+  'light-shade': #A5A5A5, // frajda
+  'light-glare': #D3D3D3, // frajds
+  'primary': #D1570E,
 );
 
 /**
@@ -62,8 +62,8 @@ $gorko-config: (
   ),
   'font': (
     'items': (
-      'base': 'sans-serif',
-      'sans': '"Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
+      'base': '"Euclid Circular", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+      'sans': '"Euclid Circular", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
     ),
     'output': 'standard',
     'property': 'font-family'
@@ -100,7 +100,7 @@ $gorko-config: (
   'weight': (
     'items': (
       'normal': 400,
-      'bold': 900
+      'medium': 500
     ),
     'output': 'standard',
     'property': 'font-weight'

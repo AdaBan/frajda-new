@@ -1,18 +1,185 @@
-{% extends "layouts/base.njk" %} 
+{% extends "layouts/base.njk" %}
 
 {% block content %}
-<div class="container">
-  <h1>Homepage</h1>
-  <h2>Site info</h2>
-  <dl>
-    <dt>name</dt>
-    <dd>{{ site.name }}</dd>
-    <dt>url</dt>
-    <dd>{{ site.url }}</dd>
-    <dt>authorName (RSS)</dt>
-    <dd>{{ site.authorName }}</dd>
-    <dt>authorEmail (RSS)</dt>
-    <dd>{{ site.authorEmail }}</dd>
-  </dl>
-</div>
+  <div class="hero">
+    <div class="container">
+      <div class="hero__inner">
+        <h1 class="hero__title">
+          A design & development studio crafting stunning front-end solutions. 
+        </h1>
+        <p class="hero__description hero__description--mobile">
+          We help companies connect with users through
+          outstanding design and scalable front-end development.
+        </p>
+        <div class="hero__content">
+          <div class="hero__image-wrapper">
+            <img class="hero__image" src="/assets/hero.svg" alt=""/>
+          </div>
+          <p class="hero__description hero__description--desktop">
+          We help companies connect with users through    
+          outstanding design and scalable front-end development.
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <h2 class="section__title">{{ services.title }}</h2>
+      
+      <ul class="services-list">
+        {% for item in services.items %}
+          <li class="services-list__item">
+            <h3 class="services-list__item-title">
+              <button
+                class="services-list__item-trigger services-list__item-trigger--{{item.color}} button-reset"
+                data-accordion-trigger
+                aria-controls="{{item.slug}}"
+              >
+                  {{ item.name }}
+              </button>
+            </h3>
+            <div class="services-list__item-body" id="{{item.slug}}">
+               <ul class="services-list__item-tags tags-list">
+                 {% for tag in item.tags %}
+                    <li class="tags-list__item tag">
+                      {{ tag }}
+                    </li>
+                  {% endfor %}
+              </ul>
+              <p class="services-list__item-description">{{ item.description }}</p>
+            </div>  
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+    <section class="section">
+    <div class="container">
+      <h2 class="section__title">{{ projects.title }}</h2>
+      <ul class="projects-list">
+        {% for item in projects.items %}
+          <li class="projects-list__item project">
+            <div>
+              <h3 class="project__title">
+                {{ item.name }}
+              </h3>
+              <p class="project__client">{{ item.client }}</p>
+              <div class="project__tags">
+                <ul class="tags-list">
+                  {% for tag in item.tags %}
+                      <li class="tags-list__item tag">{{ tag }}</li>
+                    {% endfor %}
+                </ul>
+              </div>
+            </div>
+            <div>
+              <p>{{ item.description }}</p>
+              <a href="{{item.live-href}}" target="_blank" rel="nofollow">See live</a>
+            </div>  
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <h2 class="visually-hidden">{{ testimonials.title }}</h2>
+      <div class="glide gap-top-800 md:gap-top-major">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            {% for testimonial in testimonials.items %}
+            <li class="glide__slide">
+              <blockquote>
+                <p>
+                {{ testimonial.quote }}
+                </p>
+                <footer class="person person--minor gap-top-800">
+                  <div class="person__image-wrapper">
+                    <img class="person__image lazy" data-src="{{testimonial.author.image}}"  alt="" />
+                  </div>
+                  <div>
+                    <cite class="person__name">{{testimonial.author.name}}</cite>
+                    <cite class="person__description">{{testimonial.author.role}}</cite>
+                  </div>
+                </footer>
+              </blockquote>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="testimonials-section__navigation glide__arrows gap-top-600" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="Go backwards">
+            <
+          </button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="Go forwards">
+            >
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2 class="visually-hidden">{{ about.tile }}</h2>
+    <div class="section bg-dark color-light">
+      <div class="container">
+        <p>{{ about.description.lead }}</p>
+        <p>{{ about.description.body }}</p>
+        <p>{{ about.description.small }}</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+      <h3>{{ about.subtitle }}</h3>
+        {% for person in about.team %}
+          <div>
+            <h4>{{ person.name }}</h4>
+            <p>{{ person.role }}</p>
+            <ul>
+              {% for link in person.links %}
+                <a href="{{ link.href }}" target="_blank">{{ link.name }}</a>
+              {% endfor %}
+            </ul>
+            <p>{{ person.description }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <footer class="section bg-light-glare">
+    <h2 class="visually-hidden">Contact us</h2>
+    <div class="container">
+        <img class="site-head__brand-image" src="/assets/logo.svg" alt="Frajda Studio logotype">
+        <p>Based in Warsaw, working worldwide.<br />Current time 4:20 PM, Saturday</p>
+        <p>We are available for new projects, let’s have a chat.</p>
+        <a href="mailto:hello@frajda.studio">hello@frajda.studio</a>
+        <ul>
+          {% for link in navigation.socials %}
+            <a href="{{ link.href }}" target="_blank">{{ link.name }}</a>
+          {% endfor %}
+        </ul>
+    </div>
+  
+  </footer>
+  {# <script src="{{ '/scripts/glide.min.js' | url }}"></script>
+  <script defer>
+    new Glide('.glide', {type: 'carousel', perView: 1, }).mount()
+  </script> #}
+  <script>
+    const $accordionTriggers = document.querySelectorAll('[data-accordion-trigger]');
+
+    onTriggerClick = (ev) => {
+      const controlAttr = ev.target.getAttribute('aria-controls');
+      const $accordionPanel = document.querySelector(`#${controlAttr}`);
+      
+      ev.target.classList.toggle('-is-active');
+      $accordionPanel.classList.toggle('-is-active');
+    }
+
+     for (let trigger of $accordionTriggers) {
+      trigger.addEventListener('click', onTriggerClick)
+    }
+
+  </script>
 {% endblock %}
+

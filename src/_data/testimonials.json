@@ -1,0 +1,13 @@
+{
+    "title": "Testimonials",
+    "items": [
+        {
+            "quote": "Internal stakeholders were extremely pleased with the professional-looking and high-quality design of the platform. The team stood out for their attention to detail; they went beyond what the client requested. They used Slack, Zoom, and Loom to communicate and were very responsive.",
+            "author": {
+                "name": "Mario Rudhart",
+                "role": "Co-founder & CEO at Augmenteers",
+                "image": ""
+            }
+        }
+    ]
+}

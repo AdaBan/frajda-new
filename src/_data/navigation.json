@@ -8,5 +8,19 @@
       "text": "About",
       "url": "/about/"
     }
+  ],
+  "socials": [
+    {
+      "name": "Dribble",
+        "href": "https://dribbble.com/PaulinaJadeszko"
+    },
+    {
+        "name": "Instagram",
+        "href": "https://www.instagram.com/pjadeszko/"
+    },
+    {
+        "name": "LinkedIn",
+        "href": "https://www.linkedin.com/in/paulina-jadeszko/"
+    }
   ]
 }
