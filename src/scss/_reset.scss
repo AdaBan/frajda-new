@@ -49,6 +49,11 @@ picture {
   display: block;
 }
 
+button {
+  all: unset;
+  cursor: pointer;
+}
+
 /* Inherit fonts for inputs and buttons */
 input,
 button,

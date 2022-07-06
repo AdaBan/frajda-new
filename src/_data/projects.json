@@ -6,21 +6,47 @@
         "client": "VRxs (Augmenteers)",
         "description": "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.",
         "tags": ["UX design", "Front-end development"],
-        "live-href": "https://vrxs.de/3d-product-configurator/cabinet/"
+        "live-href": "https://vrxs.de/3d-product-configurator/cabinet/",
+        "images": [
+          {
+            "url": "https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "alt": ""
+          },
+          {
+            "url": "https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "alt": ""
+          }
+        ]
       },
       {
         "name": "SaaS startup branding",
         "client": "VRxs (Augmenteers)",
         "description": "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.",
         "tags": ["Brand identity"],
-        "live-href": ""
+        "live-href": "",
+        "images": [
+          {
+            "url": "https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "alt": ""
+          }
+        ]
       },
       {
         "name": "SaaS website redesign",
         "client": "Demoboost",
         "description": "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.",
         "tags": ["Brand identity"],
-        "live-href": ""
+        "live-href": "",
+        "images": [
+          {
+            "url": "https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "alt": ""
+          },
+          {
+            "url": "https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "alt": ""
+          }
+        ]
       }
     ]
   }

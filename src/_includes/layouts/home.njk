@@ -32,14 +32,15 @@
           <li class="services-list__item">
             <h3 class="services-list__item-title">
               <button
-                class="services-list__item-trigger services-list__item-trigger--{{item.color}} button-reset"
+                class="services-list__item-trigger services-list__item-trigger--{{item.color}}
+                {% if loop.index0 === 0 %}-is-active{% endif %}"
                 data-accordion-trigger
                 aria-controls="{{item.slug}}"
               >
                   {{ item.name }}
               </button>
             </h3>
-            <div class="services-list__item-body" id="{{item.slug}}">
+            <div class="services-list__item-body {% if loop.index0 === 0 %}-is-active{% endif %}" id="{{item.slug}}" data-accordion-panel>
                <ul class="services-list__item-tags tags-list">
                  {% for tag in item.tags %}
                     <li class="tags-list__item tag">
@@ -60,7 +61,7 @@
       <ul class="projects-list">
         {% for item in projects.items %}
           <li class="projects-list__item project">
-            <div>
+            <div class="project__col">
               <h3 class="project__title">
                 {{ item.name }}
               </h3>
@@ -73,9 +74,16 @@
                 </ul>
               </div>
             </div>
-            <div>
-              <p>{{ item.description }}</p>
-              <a href="{{item.live-href}}" target="_blank" rel="nofollow">See live</a>
+            <div class="project__col">
+              <p class="project__description">{{ item.description }}</p>
+              <a class="project__link" href="{{item.live-href}}" target="_blank" rel="nofollow">See live</a>
+            </div>
+            <div class="project__images">
+                {% for image in item.images %}
+                  <div class="project__image-wrapper">
+                    <img class="project__image lazy" data-src="{{ image.url }}" alt="{{ image.alt }}" />
+                  </div>
+                {% endfor %}
             </div>  
           </li>
         {% endfor %}
@@ -85,22 +93,24 @@
   <section class="section">
     <div class="container">
       <h2 class="visually-hidden">{{ testimonials.title }}</h2>
-      <div class="glide gap-top-800 md:gap-top-major">
+      <div class="glide">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
             {% for testimonial in testimonials.items %}
             <li class="glide__slide">
-              <blockquote>
-                <p>
-                {{ testimonial.quote }}
+              <blockquote class="testimonial">
+                <p class="testimonial__quote"> 
+                "{{ testimonial.quote }}"
                 </p>
-                <footer class="person person--minor gap-top-800">
-                  <div class="person__image-wrapper">
-                    <img class="person__image lazy" data-src="{{testimonial.author.image}}"  alt="" />
+                <footer class="testimonial__footer author">
+                  {% if testimonial.author.image %}
+                  <div class="author__image-wrapper">
+                    <img class="author__image lazy" data-src="{{testimonial.author.image}}"  alt="" />
                   </div>
+                  {% endif %}
                   <div>
-                    <cite class="person__name">{{testimonial.author.name}}</cite>
-                    <cite class="person__description">{{testimonial.author.role}}</cite>
+                    <cite class="author__name weight-medium">{{testimonial.author.name}}</cite>
+                    <cite class="author__description">{{testimonial.author.role}}</cite>
                   </div>
                 </footer>
               </blockquote>
@@ -108,78 +118,68 @@
             {% endfor %}
           </ul>
         </div>
-        <div class="testimonials-section__navigation glide__arrows gap-top-600" data-glide-el="controls">
+        {# <div class="testimonials-section__navigation glide__arrows" data-glide-el="controls">
           <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="Go backwards">
             <
           </button>
           <button class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="Go forwards">
             >
           </button>
-        </div>
+        </div> #}
       </div>
     </div>
   </section>
-  <section>
+  <section class="about">
     <h2 class="visually-hidden">{{ about.tile }}</h2>
-    <div class="section bg-dark color-light">
+    <div class="about__intro section bg-dark color-light">
       <div class="container">
-        <p>{{ about.description.lead }}</p>
-        <p>{{ about.description.body }}</p>
-        <p>{{ about.description.small }}</p>
+        <p class="about__description">{{ about.description.lead }}</p>
+        <p class="about__description">{{ about.description.body }}</p>
+        <p class="about__description about__description--small">{{ about.description.small }}</p>
       </div>
     </div>
     <div class="section">
       <div class="container">
-      <h3>{{ about.subtitle }}</h3>
-        {% for person in about.team %}
-          <div>
-            <h4>{{ person.name }}</h4>
-            <p>{{ person.role }}</p>
-            <ul>
-              {% for link in person.links %}
-                <a href="{{ link.href }}" target="_blank">{{ link.name }}</a>
-              {% endfor %}
-            </ul>
-            <p>{{ person.description }}</p>
+        <div class="about__team">
+          <h3 class="about__team-title">{{ about.subtitle }}</h3>
+          <div class="about__team-list">
+            {% for person in about.team %}
+              <div class="team-member">
+                <div>
+                  <h4 class="team-member__name weight-medium">{{ person.name }}</h4>
+                  <p class="team-member__role">{{ person.role }}</p>
+                  <ul class="team-member__links">
+                    {% for link in person.links %}
+                      <li class="team-member__link-wrapper">
+                        <a href="{{ link.href }}" target="_blank">{{ link.name }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                <p class="team-member__description">{{ person.description }}</p>
+              </div>
+            {% endfor %}
           </div>
-        {% endfor %}
+        </div>
       </div>
     </div>
   </section>
-  <footer class="section bg-light-glare">
+  <footer class="footer section bg-light-glare">
     <h2 class="visually-hidden">Contact us</h2>
     <div class="container">
-        <img class="site-head__brand-image" src="/assets/logo.svg" alt="Frajda Studio logotype">
-        <p>Based in Warsaw, working worldwide.<br />Current time 4:20 PM, Saturday</p>
-        <p>We are available for new projects, let’s have a chat.</p>
-        <a href="mailto:hello@frajda.studio">hello@frajda.studio</a>
-        <ul>
+        <img class="footer__logo" src="/assets/logo.svg" alt="Frajda Studio logotype">
+        <p class="footer__small">Based in Warsaw,<br />working worldwide.</p>
+        <p class="footer__small">Current time <time data-current-time></time></p>
+        <p class="footer__major">We are available for new projects, let’s have a chat.</p>
+        <a class="footer__address" href="mailto:hello@frajda.studio">hello@frajda.studio</a>
+        <ul class="footer__links">
           {% for link in navigation.socials %}
-            <a href="{{ link.href }}" target="_blank">{{ link.name }}</a>
+            <li class="footer__link-wrapper">
+              <a href="{{ link.href }}" target="_blank">{{ link.name }}</a>
+            </li>
           {% endfor %}
         </ul>
     </div>
-  
   </footer>
-  {# <script src="{{ '/scripts/glide.min.js' | url }}"></script>
-  <script defer>
-    new Glide('.glide', {type: 'carousel', perView: 1, }).mount()
-  </script> #}
-  <script>
-    const $accordionTriggers = document.querySelectorAll('[data-accordion-trigger]');
-
-    onTriggerClick = (ev) => {
-      const controlAttr = ev.target.getAttribute('aria-controls');
-      const $accordionPanel = document.querySelector(`#${controlAttr}`);
-      
-      ev.target.classList.toggle('-is-active');
-      $accordionPanel.classList.toggle('-is-active');
-    }
-
-     for (let trigger of $accordionTriggers) {
-      trigger.addEventListener('click', onTriggerClick)
-    }
-
-  </script>
 {% endblock %}
 

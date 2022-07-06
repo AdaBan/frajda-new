@@ -1,0 +1,29 @@
+.team-member {
+    padding: 1rem 0 2.5rem;
+    border-top: 1px solid;
+
+    &:last-of-type {
+        padding-bottom: 0;
+    }
+
+    &__links {
+       padding: 0;
+       margin: 1.5rem 0 2rem;
+    }
+
+    &__link-wrapper {
+        display: inline;
+        margin-right: .5rem;
+        list-style-type: none;
+    }
+
+    &__name {
+        font-size: 1.25em;
+    }
+
+    @include media-query('md') {
+        display: grid;
+        grid-template-columns: 3fr 5fr;
+        gap: 1.5rem;
+    }
+}

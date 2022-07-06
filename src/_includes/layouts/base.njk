@@ -23,5 +23,65 @@
     <main tabindex="-1" id="main-content">
       {% block content %}{% endblock %}
     </main>
+
+    <!-- TODO: move js do _data files -->
+    
+    {# lazy loading script #}
+    <script type="module" async>
+      import Lazyload from 'https://cdn.skypack.dev/vanilla-lazyload';
+      const lazyload = new Lazyload();
+    </script>
+{# 
+    <script src="{{ 'https://cdn.jsdelivr.net/npm/@glidejs/glide' | url }}"></script>
+    <script defer>
+      new Glide('.glide').mount()
+    </script> #}
+
+    {# accordion script #}
+    <script>
+      const $accordionTriggers = document.querySelectorAll('[data-accordion-trigger]');
+      const $accordionPanels = document.querySelectorAll('[data-accordion-panel]');
+
+      onTriggerClick = (ev) => {
+        const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+        const controlAttr = ev.target.getAttribute('aria-controls');
+        const $accordionPanel = document.querySelector(`#${controlAttr}`);
+
+        if (isDesktop) {
+            console.log('czo')
+          $accordionTriggers.forEach(t => t.classList.remove('-is-active'));
+          $accordionPanels.forEach(t => t.classList.remove('-is-active'));
+          ev.target.classList.add('-is-active');
+          $accordionPanel.classList.add('-is-active');
+        } else {
+          console.log('elo')
+          ev.target.classList.toggle('-is-active');
+          $accordionPanel.classList.toggle('-is-active');
+        }
+      }
+
+      for (let trigger of $accordionTriggers) {
+        trigger.addEventListener('click', onTriggerClick)
+      }
+
+    </script>
+
+    {# date script #}
+    <script async>
+      const $dateContainer = document.querySelector('[data-current-time]');
+
+      const displayTime = () => {
+        const time = new Date();
+        const formattedTime = time.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', weekday: 'long' });
+	
+				$dateContainer.innerHTML = formattedTime;
+      }
+
+      const interval = setInterval(() => {
+				displayTime();
+			}, 10000);
+
+      displayTime();
+    </script>
   </body>
 </html>

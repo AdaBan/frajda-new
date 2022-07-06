@@ -1,0 +1,32 @@
+.footer {
+    &__logo {
+        width: 8rem;
+        margin-bottom: 4rem;
+    }
+
+    &__small {
+        margin-bottom: 1em;
+        font-size: clamp(.75rem, 3vw, .875rem);
+        text-transform: uppercase;
+    }
+
+    &__major {
+        margin: 3rem 0 1.5rem;
+        font-size: clamp(1.75rem, 8.5vw, 3.5rem);
+        line-height: 1.25;
+    }
+
+    &__address {
+        font-size: 1.5rem;
+        color: inherit;
+    }
+
+    &__links {
+        padding-left: 0;
+        margin: 3rem 0 0;
+    }
+
+    &__link-wrapper {
+        list-style-type: none;
+    }
+}

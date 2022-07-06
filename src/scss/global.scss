@@ -1,18 +1,23 @@
 @import 'config';
-
-// Next: pull in gorko for design tokens
 @import '../../node_modules/gorko/gorko.scss';
 
 @import 'reset';
 
+@import '../../node_modules/@glidejs/glide/src/assets/sass/glide.core';
+
 // Global styles start
-// @font-face {
-//   font-family: 'Euclid Circular';
-//   src: url('../fonts/euclidcircularb-medium-webfont.woff2') format('woff2'),
-//     url('../fonts/euclidcircularb-medium-webfont.woff') format('woff');
-//   font-weight: 500;
-//   font-style: normal;
-// }
+
+$container-padding: clamp(20px, 6vw, 80px);
+
+$font-size-h-1: clamp(2rem, 10vw, 5.5rem);
+$font-size-h-2: clamp(1.75rem, 8.5vw, 3.5rem);
+$font-size-h-3: clamp(1.5rem, 5vw, 2.5rem);
+
+$font-size-body-s: .75rem;
+$font-size-body-m: 1rem;
+$font-size-body-l: 1.5rem;
+$font-size-body-m-l: clamp($font-size-body-m, 2.8vw, $font-size-body-l);
+
 
 @font-face {
   font-family: 'Euclid Circular';
@@ -22,10 +27,19 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Euclid Circular';
+  src: url('../fonts/euclidcircularb-medium-webfont.woff2') format('woff2'),
+    url('../fonts/euclidcircularb-medium-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
 body {
   background: get-color('light');
   color: get-color('dark');
   @include apply-utility('font', 'base');
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -45,12 +59,14 @@ main:focus {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
   font-weight: 400;
+  line-height: 1.15;
+}
 
-  @include apply-utility('font', 'sans');
-  @include apply-utility('leading', 'flat');
+cite {
+  display: block;
+  font-style: normal;
 }
 
 ::selection {
@@ -66,6 +82,9 @@ h4 {
 
 
 // Import blocks
+@import 'blocks/author';
+@import 'blocks/about';
+@import 'blocks/footer';
 @import 'blocks/hero';
 @import 'blocks/section';
 @import 'blocks/project';
@@ -74,5 +93,7 @@ h4 {
 @import 'blocks/site-head';
 @import 'blocks/tag';
 @import 'blocks/tags-list';
+@import 'blocks/team-member';
+@import 'blocks/testimonial';
 
 

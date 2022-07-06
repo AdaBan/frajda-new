@@ -1,6 +1,6 @@
 .project {
     &__title {
-        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        font-size: $font-size-h-3;
     }
 
     &__client {
@@ -10,5 +10,47 @@
 
     &__tags {
         margin: 2rem 0 1.5rem;
+    }
+
+    &__link {
+        display: block;
+        margin: 2.5rem 0;
+        color: inherit;
+    }
+
+
+    &__images {
+        display: grid;
+        grid-auto-columns: 1fr;
+        gap: .5rem;
+        margin: 0 max(-6vw, -5rem);
+    }
+
+    &__image {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    @include media-query('md') {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &__col {
+            width: 45%;
+        }
+
+        &__images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 0;
+        }
+
+        &__image {
+             border-radius: 20px;
+        }
     }
 }
