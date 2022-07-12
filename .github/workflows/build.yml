@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies & build
         run: |
           npm ci
-          NODE_ENV=production npm run sass:process && NODE_ENV=production eleventy         
+          npm run production          
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
