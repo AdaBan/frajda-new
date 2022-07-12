@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     {% include "partials/meta-info.njk" %}
     
-    <link rel="stylesheet" href="{{ '/css/global.css?'{{ assetHash }} | url }}" />
+    <link rel="stylesheet" href="{{ '/css/global.css' | url }}" />
 
     {# Add facility for pages to declare an array of stylesheet paths #}
     {% if pageStylesheets %}
