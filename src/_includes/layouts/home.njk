@@ -167,18 +167,24 @@
   <footer class="footer section bg-light-glare">
     <h2 class="visually-hidden">Contact us</h2>
     <div class="container">
-        <img class="footer__logo" src="/assets/logo.svg" alt="Frajda Studio logotype">
-        <p class="footer__small">Based in Warsaw,<br />working worldwide.</p>
-        <p class="footer__small">Current time <time data-current-time></time></p>
-        <p class="footer__major">We are available for new projects, let’s have a chat.</p>
-        <a class="footer__address" href="mailto:hello@frajda.studio">hello@frajda.studio</a>
-        <ul class="footer__links">
-          {% for link in navigation.socials %}
-            <li class="footer__link-wrapper">
-              <a href="{{ link.href }}" target="_blank">{{ link.name }}</a>
-            </li>
-          {% endfor %}
-        </ul>
+      <div class="footer__inner">
+          <img class="footer__logo" src="/assets/logo.svg" alt="Frajda Studio logotype">
+          <div class="footer__time">
+            <p class="footer__small">Based in Warsaw,<br />working worldwide.</p>
+            <p class="footer__small">Current time <time data-current-time></time></p>
+          </div>
+          <div class="footer__contact">
+            <p class="footer__major">We are available for new projects, let’s have a chat.</p>
+            <a class="footer__address" href="mailto:hello@frajda.studio">hello@frajda.studio</a>
+          </div>
+          <ul class="footer__links">
+            {% for link in navigation.socials %}
+              <li class="footer__link-wrapper">
+                <a href="{{ link.href }}" target="_blank">{{ link.name }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
     </div>
   </footer>
 {% endblock %}

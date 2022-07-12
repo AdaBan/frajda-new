@@ -1,23 +1,27 @@
 .footer {
     &__logo {
-        width: 8rem;
+        width: $logo-width;
         margin-bottom: 4rem;
     }
 
     &__small {
         margin-bottom: 1em;
-        font-size: clamp(.75rem, 3vw, .875rem);
+        font-size: $font-size-body-s;
         text-transform: uppercase;
+
+        &:last-child {
+            margin: 0;
+        }
     }
 
     &__major {
         margin: 3rem 0 1.5rem;
-        font-size: clamp(1.75rem, 8.5vw, 3.5rem);
+        font-size: $font-size-h-2;
         line-height: 1.25;
     }
 
     &__address {
-        font-size: 1.5rem;
+        font-size: $font-size-h-3;
         color: inherit;
     }
 
@@ -28,5 +32,44 @@
 
     &__link-wrapper {
         list-style-type: none;
+    }
+
+    @include media-query('lg') {
+        min-height: 100vh;
+
+        &__inner {
+            display: grid;
+            grid-template-rows: calc(50vh - 7rem) auto;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            grid-template-areas: 
+            "logo time"
+            "links contact";
+        }
+
+        &__logo {
+            grid-area: logo;
+
+        }
+
+        &__links {
+            grid-area: links;
+            align-self: end;
+        }
+
+        &__contact {
+            grid-area: contact;
+            align-self: end;
+        }
+
+        &__time {
+            grid-area: time;
+            align-self: center;
+        }
+
+        &__major {
+            margin-top: 0;
+        }
+
     }
 }
