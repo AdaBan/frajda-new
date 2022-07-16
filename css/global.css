@@ -565,7 +565,7 @@ cite {
 
 ::selection {
   color: #fff;
-  background: rgba(38, 49, 71, 0.99);
+  background: rgba(28, 26, 26, 0.99);
 }
 
 .button-reset {
@@ -635,6 +635,7 @@ cite {
 .about__team-title {
   margin-bottom: 1.5em;
   font-size: clamp(1.75rem, 8.5vw, 3.5rem);
+  width: 11ch;
 }
 @media (min-width: 1024px) {
   .about__intro {
@@ -731,6 +732,8 @@ cite {
   background: #D3D3D3;
 }
 .hero__inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -784,6 +787,17 @@ cite {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 85%;
+    aspect-ratio: 1/1;
+    border: 1px solid #A5A5A5;
+    border-radius: 50%;
+    opacity: 0.4;
   }
 }
 
@@ -875,20 +889,26 @@ cite {
   margin-bottom: 0;
 }
 
+@keyframes scaleIn {
+  to {
+    transform: scale(1);
+  }
+}
 .services-list {
   padding: 0;
   margin: 0;
   list-style-type: none;
 }
 .services-list__item {
-  padding: 1.5rem 0;
+  padding: 1.2em 0;
   border-bottom: 1px solid #D3D3D3;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
 }
 .services-list__item:first-of-type {
   padding-top: 0;
 }
 .services-list__item-title {
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-size: 1em;
   overflow: hidden;
 }
 .services-list__item-body {
@@ -906,21 +926,22 @@ cite {
 }
 .services-list__item-trigger {
   display: flex;
-  align-items: center;
   width: 100%;
   text-align: left;
   color: #878787;
   transform: translateX(-1.332em);
-  transition: 0.3s ease-in-out;
+  transition: 0.3s cubic-bezier(0.45, 0, 0.55, 1);
 }
 .services-list__item-trigger::before {
   content: "";
   width: 0.666em;
   height: 0.666em;
   margin-right: 0.666em;
+  margin-top: 0.25em;
   border-radius: 50%;
   background: currentColor;
   flex-shrink: 0;
+  transform: scale(0);
 }
 .services-list__item-trigger:focus {
   outline: none;
@@ -928,6 +949,9 @@ cite {
 .services-list__item-trigger.-is-active {
   color: #1C1A1A;
   transform: translateX(0);
+}
+.services-list__item-trigger.-is-active::before {
+  animation: scaleIn 0.3s 0.15s forwards;
 }
 .services-list__item-trigger--gray:before {
   background: #878787;

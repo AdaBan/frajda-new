@@ -37,7 +37,7 @@
 
 
     
-    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/frajda-new/css/global.css" />
 
     
     
@@ -94,7 +94,9 @@
     <div class="container">
       <div class="hero__inner">
         <h1 class="hero__title">
-          A design & development studio crafting stunning front-end solutions. 
+          <span>A design & development </span>
+          <span>studio crafting stunning</span>
+          <span>front-end solutions.</span>
         </h1>
         <p class="hero__description hero__description--mobile">
           We help companies connect with users through
@@ -121,15 +123,46 @@
           <li class="services-list__item">
             <h3 class="services-list__item-title">
               <button
-                class="services-list__item-trigger services-list__item-trigger--gray
+                class="services-list__item-trigger services-list__item-trigger--green
                 -is-active"
+                data-accordion-trigger
+                aria-controls="design-strategy"
+              >
+                  Design strategy
+              </button>
+            </h3>
+            <div class="services-list__item-body -is-active" id="design-strategy" data-accordion-panel>
+               <ul class="services-list__item-tags tags-list">
+                 
+                    <li class="tags-list__item tag">
+                      UI/UX Audit
+                    </li>
+                  
+                    <li class="tags-list__item tag">
+                      Workshops
+                    </li>
+                  
+                    <li class="tags-list__item tag">
+                      Market Research
+                    </li>
+                  
+              </ul>
+              <p class="services-list__item-description">Close collaboration with the client to understand the vision and define users&#39; needs is the key to product success. We listen, we empathize with the users and we care about the business needs. Through UI/UX audits, users interviews and product definition workshops we can plan the scope and recommend the best solutions to support the company&#39;s mission.</p>
+            </div>  
+          </li>
+        
+          <li class="services-list__item">
+            <h3 class="services-list__item-title">
+              <button
+                class="services-list__item-trigger services-list__item-trigger--gray
+                "
                 data-accordion-trigger
                 aria-controls="ui-design"
               >
                   Product Design
               </button>
             </h3>
-            <div class="services-list__item-body -is-active" id="ui-design" data-accordion-panel>
+            <div class="services-list__item-body " id="ui-design" data-accordion-panel>
                <ul class="services-list__item-tags tags-list">
                  
                     <li class="tags-list__item tag">
@@ -224,37 +257,6 @@
                   
               </ul>
               <p class="services-list__item-description">Webflow description</p>
-            </div>  
-          </li>
-        
-          <li class="services-list__item">
-            <h3 class="services-list__item-title">
-              <button
-                class="services-list__item-trigger services-list__item-trigger--green
-                "
-                data-accordion-trigger
-                aria-controls="design-strategy"
-              >
-                  Design strategy
-              </button>
-            </h3>
-            <div class="services-list__item-body " id="design-strategy" data-accordion-panel>
-               <ul class="services-list__item-tags tags-list">
-                 
-                    <li class="tags-list__item tag">
-                      UI/UX Audit
-                    </li>
-                  
-                    <li class="tags-list__item tag">
-                      Workshops
-                    </li>
-                  
-                    <li class="tags-list__item tag">
-                      Market Research
-                    </li>
-                  
-              </ul>
-              <p class="services-list__item-description">Close collaboration with the client to understand the vision and define users&#39; needs is the key to product success. We listen, we empathize with the users and we care about the business needs. Through UI/UX audits, users interviews and product definition workshops we can plan the scope and recommend the best solutions to support the company&#39;s mission.</p>
             </div>  
           </li>
         
@@ -466,15 +468,15 @@
           <ul class="footer__links">
             
               <li class="footer__link-wrapper">
-                <a href="https://dribbble.com/PaulinaJadeszko" target="_blank">Dribble</a>
+                <a href="https://dribbble.com/frajdastudio/about" target="_blank">Dribbble</a>
               </li>
             
               <li class="footer__link-wrapper">
-                <a href="https://www.instagram.com/pjadeszko/" target="_blank">Instagram</a>
+                <a href="https://www.instagram.com/frajda_studio/" target="_blank">Instagram</a>
               </li>
             
               <li class="footer__link-wrapper">
-                <a href="https://www.linkedin.com/in/paulina-jadeszko/" target="_blank">LinkedIn</a>
+                <a href="https://www.linkedin.com/company/frajdastudio/" target="_blank">LinkedIn</a>
               </li>
             
           </ul>
