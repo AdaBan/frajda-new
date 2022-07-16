@@ -2,6 +2,13 @@
     "title": "What we do",
     "items": [
       {
+        "name": "Design strategy",
+        "description": "Close collaboration with the client to understand the vision and define users' needs is the key to product success. We listen, we empathize with the users and we care about the business needs. Through UI/UX audits, users interviews and product definition workshops we can plan the scope and recommend the best solutions to support the company's mission.",
+        "tags": ["UI/UX Audit", "Workshops", "Market Research"],
+        "slug": "design-strategy",
+        "color": "green"
+      },
+      {
         "name": "Product Design",
         "description": "We approach each project individually. Our mission is to create scalable digital products with respect for the users and the client. We always ensure that it goes in pair with a clean and beautiful visual design. We are passionate and we constantly strive to create accessible and stunning projects.",
         "tags": ["UX design", "UI design", "Design Systems", "Websites"],
@@ -21,13 +28,6 @@
         "tags": ["UX design", "UI design", "Design Systems", "Websites"],
         "slug": "webflow",
         "color": "black"
-      },
-      {
-        "name": "Design strategy",
-        "description": "Close collaboration with the client to understand the vision and define users' needs is the key to product success. We listen, we empathize with the users and we care about the business needs. Through UI/UX audits, users interviews and product definition workshops we can plan the scope and recommend the best solutions to support the company's mission.",
-        "tags": ["UI/UX Audit", "Workshops", "Market Research"],
-        "slug": "design-strategy",
-        "color": "green"
       }
     ]
   }

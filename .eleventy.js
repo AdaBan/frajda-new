@@ -15,6 +15,7 @@ module.exports = config => {
   config.addPassthroughCopy('./src/fonts/');
 
   return {
+    pathPrefix: '/frajda-new/',
     markdownTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',

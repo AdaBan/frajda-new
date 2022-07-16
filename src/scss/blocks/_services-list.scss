@@ -1,13 +1,21 @@
 $decor-width: .666em;
 
+@keyframes scaleIn {
+    to {
+        transform: scale(1);
+    }
+}
+
+
 .services-list {
     padding: 0;
     margin: 0;
     list-style-type: none;
 
     &__item {
-        padding: 1.5rem 0;
+        padding: 1.2em 0;
         border-bottom: 1px solid #D3D3D3;
+        font-size: $font-size-h-3;
 
         &:first-of-type {
             padding-top: 0;
@@ -15,8 +23,9 @@ $decor-width: .666em;
     }
 
     &__item-title {
-        font-size: $font-size-h-3;
+        font-size: 1em;
         overflow: hidden;
+   
     }
 
     &__item-body {
@@ -36,22 +45,22 @@ $decor-width: .666em;
 
     &__item-trigger {
         display: flex;
-        align-items: center;
         width: 100%;
-    
         text-align: left;
         color:  #878787;
         transform: translateX(-#{$decor-width * 2});
-        transition: .3s ease-in-out;
+        transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
 
         &::before {
             content: "";
             width: $decor-width;
             height: $decor-width;
             margin-right: $decor-width;
+            margin-top: .25em;
             border-radius: 50%;
             background: currentColor;
             flex-shrink: 0;
+            transform: scale(0);
         }
 
         &:focus {
@@ -62,6 +71,9 @@ $decor-width: .666em;
             color: #1C1A1A;
             transform: translateX(0);
 
+            &::before {
+                animation: scaleIn .3s .15s forwards;
+            }
         }
 
         &--gray {
