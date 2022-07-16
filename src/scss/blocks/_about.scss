@@ -7,10 +7,17 @@
         letter-spacing: -0.01em;
 
         &--small {
-            margin: 4em 0 0 auto;
-            width: 25ch;
+            max-width: none;
+            margin: 3rem 0 0 auto;
             font-size: clamp(.75rem, 3vw, .875rem);
             text-transform: uppercase;
+            text-align: right;
+            line-height: 1.5;
+        }
+
+        &-line {
+            display: block;
+            white-space: nowrap;
         }
     }
 
@@ -47,11 +54,28 @@
             }
         }
 
+        &__description {
+            position: relative;
+            z-index: 1;
+
+            &--small {
+                text-align: left;
+                width: 45ch;
+                margin-top: -2rem;
+            }
+
+            &-line--indent {
+                text-indent: 14ch;
+            }
+        }
+
         &__team {
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 1.5rem;
 
         }
+
+
     }
 }

@@ -3,7 +3,11 @@
     "description": {
         "lead": "We are a product designer and a frontend developer duo.",
         "body": "Our goal is to deliver high quality interfaces that solve business problems and offer a great experience to the users.",
-        "small": "We believe that creating a digital products is about solving specific problems and satisfying users' needs."
+        "small": {
+           "line1": "We believe that creating a digital product",
+           "line2": "is about solving problems",
+           "line3": "and satisfying users' needs."
+        }
     },
     "subtitle": "Get to know us better",
     "team": [

@@ -59,7 +59,7 @@ main:focus {
   outline: none;
 }
 
-a {
+a:not(.no-decor) {
   position: relative;
   color: inherit;
   text-decoration: none;

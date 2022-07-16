@@ -5,22 +5,17 @@
     <div class="container">
       <div class="hero__inner">
         <h1 class="hero__title">
-          <span>A design & development </span>
-          <span>studio crafting stunning</span>
-          <span>front-end solutions.</span>
+          A design & development studio crafting stunning front-end solutions.
         </h1>
-        <p class="hero__description hero__description--mobile">
-          We help companies connect with users through
-          outstanding design and scalable front-end development.
-        </p>
         <div class="hero__content">
+           <p class="hero__description">
+              <span class="hero__description-line">We help companies connect with users</span>
+              <span class="hero__description-line hero__description-line--indent">through outstanding design</span>
+              <span class="hero__description-line">and&nbsp;scalable front-end development.</span>
+          </p>
           <div class="hero__image-wrapper">
             <img class="hero__image" src="{{ '/assets/hero.svg' | url }}" alt=""/>
           </div>
-          <p class="hero__description hero__description--desktop">
-          We help companies connect with users through    
-          outstanding design and scalable front-end development.
-        </p>
         </div>
       </div>
     </div>
@@ -102,12 +97,12 @@
             <li class="glide__slide">
               <blockquote class="testimonial">
                 <p class="testimonial__quote"> 
-                "{{ testimonial.quote }}"
+                  “{{ testimonial.quote }}”
                 </p>
                 <footer class="testimonial__footer author">
                   {% if testimonial.author.image %}
                   <div class="author__image-wrapper">
-                    <img class="author__image lazy" data-src="{{testimonial.author.image}}"  alt="" />
+                    <img class="author__image" src="{{ testimonial.author.image | url }}" alt="" />
                   </div>
                   {% endif %}
                   <div>
@@ -137,7 +132,11 @@
       <div class="container">
         <p class="about__description">{{ about.description.lead }}</p>
         <p class="about__description">{{ about.description.body }}</p>
-        <p class="about__description about__description--small">{{ about.description.small }}</p>
+        <p class="about__description about__description--small">
+          <span class="about__description-line">{{ about.description.small.line1 }}</span>
+          <span class="about__description-line about__description-line--indent">{{ about.description.small.line2 }}</span>
+          <span class="about__description-line">{{ about.description.small.line3 }}</span>
+         </p>
       </div>
     </div>
     <div class="section">
@@ -172,7 +171,7 @@
       <div class="footer__inner">
           <img class="footer__logo" src="{{ '/assets/logo.svg' | url }}" alt="Frajda Studio logotype">
           <div class="footer__time">
-            <p class="footer__small">Based in Warsaw,<br />working worldwide.</p>
+            <p class="footer__small">Based in Warsaw,<span class="footer__small-indent">working worldwide.</span></p>
             <p class="footer__small">Current time <time data-current-time></time></p>
           </div>
           <div class="footer__contact">

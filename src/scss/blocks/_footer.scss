@@ -12,6 +12,11 @@
         &:last-child {
             margin: 0;
         }
+
+        &-indent {
+            display: block;
+            text-indent: 3ch;
+        }
     }
 
     &__major {
