@@ -11,7 +11,7 @@
         flex-direction: column;
         justify-content: space-between;
         min-height: 100vh;
-        padding-top: clamp(6rem, 24vh, 15rem);
+        padding-top: clamp(6rem, calc(12vh + 8vw), 15rem);
     }
 
     &__title {

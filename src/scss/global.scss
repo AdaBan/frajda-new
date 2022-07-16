@@ -44,6 +44,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 a:not([class]) {
@@ -51,12 +52,42 @@ a:not([class]) {
 }
 
 :focus {
-  outline: 2px dashed get-color('primary');
-  outline-offset: 0.25rem;
+  outline: 2px solid get-color('primary');
 }
 
 main:focus {
   outline: none;
+}
+
+a {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+
+  &::before {
+      content: '';
+      position: absolute;
+      top: 90%;
+      left: 0;
+      width: 100%;
+      height: .0625em;
+      background: currentColor;
+      transform: scaleX(1);
+  }
+
+
+  @media (hover: hover) {
+      &::before {
+          pointer-events: none;
+          transform-origin: right;
+          transition: transform 0.25s;
+      }
+      
+      &:hover::before {
+          transform-origin: left;
+          transform: scaleX(0);
+      }
+  }
 }
 
 h1,

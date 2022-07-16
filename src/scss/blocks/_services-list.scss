@@ -109,6 +109,7 @@ $decor-width: .666em;
     @include media-query('lg') {
         position: relative;
         width: 100%;
+        margin-top: 7rem;
 
         &__item {
             width: 45%;

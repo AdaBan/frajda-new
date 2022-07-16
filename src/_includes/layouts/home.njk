@@ -15,7 +15,7 @@
         </p>
         <div class="hero__content">
           <div class="hero__image-wrapper">
-            <img class="hero__image" src="/assets/hero.svg" alt=""/>
+            <img class="hero__image" src="{{ '/assets/hero.svg' | url }}" alt=""/>
           </div>
           <p class="hero__description hero__description--desktop">
           We help companies connect with users through    
@@ -25,7 +25,7 @@
       </div>
     </div>
   </div>
-  <section class="section">
+  <section class="section" id="services">
     <div class="container">
       <h2 class="section__title">{{ services.title }}</h2>
       
@@ -57,7 +57,7 @@
       </ul>
     </div>
   </section>
-    <section class="section">
+    <section class="section" id="work">
     <div class="container">
       <h2 class="section__title">{{ projects.title }}</h2>
       <ul class="projects-list">
@@ -131,7 +131,7 @@
       </div>
     </div>
   </section>
-  <section class="about">
+  <section class="about" id="about">
     <h2 class="visually-hidden">{{ about.tile }}</h2>
     <div class="about__intro section bg-dark color-light">
       <div class="container">
@@ -166,11 +166,11 @@
       </div>
     </div>
   </section>
-  <footer class="footer section bg-light-glare">
+  <footer class="footer section bg-light-glare" id="contact">
     <h2 class="visually-hidden">Contact us</h2>
     <div class="container">
       <div class="footer__inner">
-          <img class="footer__logo" src="/assets/logo.svg" alt="Frajda Studio logotype">
+          <img class="footer__logo" src="{{ '/assets/logo.svg' | url }}" alt="Frajda Studio logotype">
           <div class="footer__time">
             <p class="footer__small">Based in Warsaw,<br />working worldwide.</p>
             <p class="footer__small">Current time <time data-current-time></time></p>
