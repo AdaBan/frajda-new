@@ -3,48 +3,46 @@
     "items": [
       {
         "name": "AR Configurator",
-        "client": "VRxs (Augmenteers)",
-        "description": "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.",
+        "client": "Augmenteers",
+        "description": "Augmenteers is a platform for online retailers to increase performance with 3D product visualizations. We designed and developed a user-friendly experience that lets customers configure the product, scan the QR code and see the model in their room using AR technology. We implemented the front-end of the web app in React.js.",
         "tags": ["UX design", "Front-end development"],
-        "live-href": "https://vrxs.de/3d-product-configurator/cabinet/",
+        "live": "https://vrxs.de/3d-product-configurator/cabinet/",
         "images": [
           {
-            "url": "https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-            "alt": ""
+            "url": "/assets/work/augmenteers-configurator-1.png",
+            "alt": "Furniture AR configurator design"
           },
           {
-            "url": "https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-            "alt": ""
+            "videoUrl": "/assets/work/augmenteers-configurator-2.mp4"
           }
         ]
       },
       {
-        "name": "SaaS startup branding",
-        "client": "VRxs (Augmenteers)",
-        "description": "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.",
+        "name": "Augmenteers branding",
+        "client": "Augmenteers",
+        "description": "The goal was to present Augmenteers as a trustworthy, professional partner for 3D and Augmented Reality solutions, yet maintaining their young and innovative approach. We designed a logomark that represents the interpenetration of two worlds - real and virtual. The result of combining these two parts is a stable construction that shows professionalism and trust.",
         "tags": ["Brand identity"],
-        "live-href": "",
+        "live": "",
         "images": [
           {
-            "url": "https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-            "alt": ""
+            "videoUrl": "/assets/work/augmenteers-branding.mp4"
           }
         ]
       },
       {
         "name": "SaaS website redesign",
         "client": "Demoboost",
-        "description": "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.",
-        "tags": ["Brand identity"],
-        "live-href": "",
+        "description": "Demoboost helps software companies deliver a demo experience that sells – internally and with partners. As a result of the growth and global expansion, their outdated website needed a fresh look. We proposed a new visual language and prepared all animated assets to show how the product works. The new website was implemented with a static site generator 11ty, with the focus on performance and user experience.",
+        "tags": ["Web design", "Front-end development"],
+        "live": "https://demoboost.com/",
         "images": [
           {
-            "url": "https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-            "alt": ""
+            "url": "/assets/work/demoboost-website-1.png",
+            "alt": "Demoboost website product shot"
           },
           {
-            "url": "https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-            "alt": ""
+            "url": "/assets/work/demoboost-website-2.png",
+            "alt": "Demoboost website product shot"
           }
         ]
       }

@@ -75,12 +75,30 @@
             </div>
             <div class="project__col">
               <p class="project__description">{{ item.description }}</p>
-              <a class="project__link" href="{{item.live-href}}" target="_blank" rel="nofollow">See live</a>
+               {% if item.live %}
+              <a class="project__link" href="{{item.live}}" target="_blank" rel="nofollow">
+                See live
+                <i class="project__link-icon">{% svg "new-tab" %}</i>
+              </a>
+             {% else %}
+             <p class="project__link">
+                Case study coming soon
+                <i class="project__link-icon">{% svg "timer" %}</i>
+              </p>
+              {% endif %}
             </div>
             <div class="project__images">
-                {% for image in item.images %}
+                {% for asset in item.images %}
                   <div class="project__image-wrapper">
-                    <img class="project__image lazy" data-src="{{ image.url }}" alt="{{ image.alt }}" />
+                    {% if asset.url %}
+                    <img class="project__image lazy" data-src="{{ asset.url | url }}" alt="{{ asset.alt }}" />
+                    {% endif %}
+                    {% if asset.videoUrl %}
+                    <video class="project__image lazy" data-src="{{ asset.videoUrl| url }}" autoplay loop muted playsinline>
+                      <source data-src="{{ asset.videoUrl| url }}" type="video/mp4" />
+                      Sorry, your browser doesn't support embedded videos.
+                    </video>
+                    {% endif %}
                   </div>
                 {% endfor %}
             </div>  
@@ -104,7 +122,7 @@
                 <footer class="testimonial__footer author">
                   {% if testimonial.author.image %}
                   <div class="author__image-wrapper">
-                    <img class="author__image" src="{{ testimonial.author.image | url }}" alt="" />
+                    <img class="author__image lazy" data-src="{{ testimonial.author.image | url }}" alt="" />
                   </div>
                   {% endif %}
                   <div>
