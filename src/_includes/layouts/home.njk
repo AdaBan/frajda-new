@@ -20,7 +20,8 @@
       </div>
     </div>
   </div>
-  <section class="section" id="services">
+  <section class="section">
+    <div class="section__anchor" id="services" data-anchor></div>
     <div class="container">
       <h2 class="section__title">{{ services.title }}</h2>
       
@@ -52,7 +53,8 @@
       </ul>
     </div>
   </section>
-    <section class="section" id="work">
+  <section class="section">
+    <div class="section__anchor" id="work" data-anchor></div>
     <div class="container">
       <h2 class="section__title">{{ projects.title }}</h2>
       <ul class="projects-list">
@@ -126,9 +128,10 @@
       </div>
     </div>
   </section>
-  <section class="about" id="about">
+  <section class="about">
     <h2 class="visually-hidden">{{ about.tile }}</h2>
     <div class="about__intro section bg-dark color-light">
+      <div class="section__anchor" id="about" data-anchor></div>
       <div class="container">
         <p class="about__description">{{ about.description.lead }}</p>
         <p class="about__description">{{ about.description.body }}</p>
@@ -165,11 +168,14 @@
       </div>
     </div>
   </section>
-  <footer class="footer section bg-light-glare" id="contact">
+  <footer class="footer section bg-light-glare">
+    <div class="section__anchor" id="contact" data-anchor></div>
     <h2 class="visually-hidden">Contact us</h2>
     <div class="container">
       <div class="footer__inner">
-          <img class="footer__logo" src="{{ '/assets/logo.svg' | url }}" alt="Frajda Studio logotype">
+          <div class="footer__brand-image">
+              {% svg "logo" %}
+          </div>
           <div class="footer__time">
             <p class="footer__small">Based in Warsaw,<span class="footer__small-indent">working worldwide.</span></p>
             <p class="footer__small">Current time <time data-current-time></time></p>

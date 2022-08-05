@@ -1,18 +1,31 @@
 <a class="visually-hidden no-decor" href="#main-content">Skip to content</a>
-<header role="banner" class="site-head">
+<header role="banner" class="site-head" data-site-head>
   <div class="container">
     <div class="site-head__inner">
-      <a class="site-head__brand no-decor" href="/" aria-label="{{ site.name }} - home">
-        <img class="site-head__brand-image" src="{{ '/assets/logo.svg' | url }}" alt="Frajda Studio logotype">
+      <a class="site-head__brand no-decor" href="/" aria-label="{{ site.name }} - home" data-brand>
+         {% svg "logo" %}
       </a>
+
+      <button class="site-head__nav-toggle" aria-label="Open navigation" data-nav-open>
+        {% svg "menu-open" %}
+      </button>
+      <button class="site-head__nav-toggle -is-hidden" aria-label="Open navigation" data-nav-close>
+        {% svg "close" %}
+      </button>
+  
       <nav
         class="site-head__nav nav"
         aria-label="Primary navigaton"
+        data-nav
       >
-        <ul class="nav__list">
+      
+        <ul class="nav__list" data-nav-links>
           {% for item in navigation.items %}
           <li class="nav__item">
-            <a class="nav__link no-decor" href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
+            <a
+              class="nav__link no-decor"
+              href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}
+            >
               {{ item.text }}
             </a>
           </li>

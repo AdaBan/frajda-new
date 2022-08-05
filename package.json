@@ -17,6 +17,7 @@
     "@11ty/eleventy-cache-assets": "^2.3.0",
     "@glidejs/glide": "^3.5.2",
     "concurrently": "^6.2.1",
+    "eleventy-plugin-svg-sprite": "^1.2.2",
     "gorko": "^0.7.1",
     "sass": "^1.38.1"
   },

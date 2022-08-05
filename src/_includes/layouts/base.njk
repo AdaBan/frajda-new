@@ -18,6 +18,8 @@
     {% endif %}
   </head>
   <body>
+    {% svgsprite %}
+
     {% include "partials/site-head.njk" %}
 
     <main tabindex="-1" id="main-content">
@@ -37,8 +39,96 @@
       new Glide('.glide').mount()
     </script> #}
 
+    {# mobile navigation script #}
+    <script async>
+      const $buttonClose = document.querySelector('[data-nav-close]');
+      const $buttonOpen = document.querySelector('[data-nav-open]');
+      const $navigation = document.querySelector('[data-nav]');
+      const $navigationLinksList = document.querySelector('[data-nav-links]');
+      const $brand = document.querySelector('[data-brand]');
+
+      const closeNavigation = () => {
+        if (!$navigation) {
+          return;
+        }
+        
+        $buttonOpen.classList.remove('-is-hidden');
+        $buttonClose.classList.add('-is-hidden');
+        $buttonClose.classList.remove('-is-reversed'); // color animation
+
+        $navigation.classList.remove('-is-active');
+        document.body.style.overflow = 'auto';
+      }
+      const openNavigation = () => {
+        if (!$navigation) {
+          return;
+        }
+
+        $buttonClose.classList.remove('-is-hidden');
+        $buttonOpen.classList.add('-is-hidden');
+        $navigation.classList.add('-is-active');
+        document.body.style.overflow = 'hidden';
+
+        setTimeout(() => {
+          $buttonClose.classList.add('-is-reversed'); // color animation
+        }, 400);
+      }
+      $buttonOpen.addEventListener('click', openNavigation);
+      $buttonClose.addEventListener('click', closeNavigation);
+      $navigationLinksList.addEventListener('click', closeNavigation);
+    </script>
+
+    {# navigation on scroll script #}
+    {#
+    <script async>
+      const $navbar = document.querySelector('[data-site-head]');
+      const $body = document.querySelector('body');
+  
+      let lastScrollPosition = 0;
+
+      const throttle = (fn, wait) => {
+        let time = Date.now();
+        return function() {
+          if ((time + wait - Date.now()) < 0) {
+            fn();
+            time = Date.now();
+          }
+        }
+      }
+
+      const toggleNavOnScroll = () => {
+        const documentPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+
+        // top of the page
+        if (documentPosition < windowHeight / 3) {
+          $navbar.classList.remove('-has-bg');
+          $navbar.classList.remove('-is-hidden');
+
+          return;
+        }
+        
+        // scroll up
+        if (documentPosition < lastScrollPosition) {
+            $navbar.classList.remove('-is-hidden');
+            $navbar.classList.add('-has-bg');
+            $body.classList.add('nav-visible');
+        }
+        // scroll down
+        else {
+          $navbar.classList.add('-is-hidden');
+            $body.classList.remove('nav-visible');
+        }
+        
+        lastScrollPosition = documentPosition;
+      }
+  
+      window.addEventListener('scroll', throttle(toggleNavOnScroll, 300));
+    </script>
+    #}
+
     {# accordion script #}
-    <script>
+    <script async>
       const $accordionTriggers = document.querySelectorAll('[data-accordion-trigger]');
       const $accordionPanels = document.querySelectorAll('[data-accordion-panel]');
 
@@ -48,13 +138,11 @@
         const $accordionPanel = document.querySelector(`#${controlAttr}`);
 
         if (isDesktop) {
-            console.log('czo')
           $accordionTriggers.forEach(t => t.classList.remove('-is-active'));
           $accordionPanels.forEach(t => t.classList.remove('-is-active'));
           ev.target.classList.add('-is-active');
           $accordionPanel.classList.add('-is-active');
         } else {
-          console.log('elo')
           ev.target.classList.toggle('-is-active');
           $accordionPanel.classList.toggle('-is-active');
         }
@@ -67,7 +155,7 @@
     </script>
 
     {# date script #}
-    <script async>
+    <script defer>
       const $dateContainer = document.querySelector('[data-current-time]');
 
       const displayTime = () => {

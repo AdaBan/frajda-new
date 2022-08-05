@@ -1,14 +1,15 @@
 .nav {
     &__list {
-        display: flex;
+        width: 100%;
         padding: 0;
         margin: 0;
         list-style-type: none;
+        text-align: center;
     }
 
     &__item {
-        font-size: $font-size-body-m;
-        margin: 0 2.5vw;
+        font-size: $font-size-h-1;
+        margin: .5em 0;
     }
 
     &__link {
@@ -39,6 +40,21 @@
                 transform-origin: left;
                 transform: scaleX(1);
             }
+        }
+    }
+
+    @include media-query('lg') {
+        &__close-button {
+            display: none;
+        }
+        
+        &__list {
+            display: flex;
+        }
+    
+        &__item {
+            font-size: $font-size-body-m;
+            margin: 0 2.5vw;
         }
     }
 }

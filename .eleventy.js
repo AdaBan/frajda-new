@@ -1,3 +1,6 @@
+// plugins
+const svgSprite = require('eleventy-plugin-svg-sprite');
+
 module.exports = config => {
   // Tell 11ty to use the .eleventyignore and ignore our .gitignore file
   config.setUseGitIgnore(false);
@@ -13,6 +16,10 @@ module.exports = config => {
   // https://www.11ty.dev/docs/copy/
   config.addPassthroughCopy('./src/assets/');
   config.addPassthroughCopy('./src/fonts/');
+
+  config.addPlugin(svgSprite, {
+    path: './src/icons'
+  });
 
   return {
     pathPrefix: '/frajda-new/',
