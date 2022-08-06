@@ -798,6 +798,10 @@ svg {
 .glide__pagination {
   font-size: 1.25rem;
 }
+.glide__pagination-number {
+  display: inline-block;
+  width: 0.666em;
+}
 .glide__arrow {
   width: 2.5rem;
   height: 2.5rem;
@@ -812,12 +816,15 @@ svg {
 }
 .glide__arrow--disabled {
   color: #A5A5A5;
-  opacity: 0.75;
+  border-color: currentColor;
+  opacity: 0.5;
   pointer-events: none;
   cursor: auto;
+  outline: none !important;
 }
 .glide__arrow:hover, .glide__arrow:focus {
-  border-color: #D1570E;
+  border-color: currentColor;
+  outline-color: currentColor;
 }
 
 .hero {
@@ -1288,12 +1295,12 @@ svg {
 }
 
 .testimonial {
-  max-width: 33ch;
+  max-width: 32ch;
   margin: 0 auto;
   font-size: clamp(1.5rem, 5vw, 2.5rem);
 }
 .testimonial__quote {
-  text-indent: 2em;
+  text-indent: 4em;
   letter-spacing: -0.01em;
 }
 .testimonial__footer {

@@ -6,9 +6,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/png" href="/frajda-new/assets/favicon.png"/>
     
 
 
+ 
+  
 
 
 
@@ -20,20 +23,20 @@
 
 
 
-<title>Base Project - Frajda – design and development studio</title>
+<title>Frajda Studio – Design &amp; Development Agency</title>
 <link rel="canonical" href="https://frajda.studio//" />
 
-<meta property="og:site_name" content="Frajda – design and development studio" />
-<meta property="og:title" content="Base Project - Frajda – design and development studio" />
+<meta property="og:site_name" content="Frajda Studio – Design &amp; Development Agency" />
+<meta property="og:title" content="Frajda Studio – Design &amp; Development Agency" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://frajda.studio//" />
 
 
 
 
-  <meta name="description" content="Don’t forget the meta desc Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros." />
-  <meta name="twitter:description" content="Don’t forget the meta desc Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros." />
-  <meta property="og:description" content="Don’t forget the meta desc Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros." />
+  <meta name="description" content="We help companies connect with users through outstanding design and scalable front-end development." />
+  <meta name="twitter:description" content="We help companies connect with users through outstanding design and scalable front-end development." />
+  <meta property="og:description" content="We help companies connect with users through outstanding design and scalable front-end development." />
 
 
     
@@ -49,7 +52,7 @@
 <header role="banner" class="site-head" data-site-head>
   <div class="container">
     <div class="site-head__inner">
-      <a class="site-head__brand no-decor" href="/" aria-label="Frajda – design and development studio - home" data-brand>
+      <a class="site-head__brand no-decor" href="/" aria-label="Frajda Studio – Design &amp; Development Agency - home" data-brand>
          <svg class=" " aria-describedby="symbol-logo-desc" aria-labelledby="symbol-logo-desc" role="group">
                 <desc id="symbol-logo-desc-content">logo icon</desc>
                 <use xlink:href="#svg-logo"></use>
@@ -488,7 +491,8 @@
         </div>
         <div class="glide__navigation">
           <div class="glide__pagination">
-            1/5
+            <span class="glide__pagination-number" data-glide-index>1</span>/
+            <span class="glide__pagination-number">2</span>
           </div>
           <div class=" glide__arrows" data-glide-el="controls">
             <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="Go backwards">
@@ -625,7 +629,18 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script defer>
-      new Glide('.glide', {type: 'carousel'}).mount()
+      const glide = new Glide('.glide', {rewind: false});
+      const $indexWrapper = document.querySelector('[data-glide-index]');
+
+      glide.on('move.after', function () {
+        if (!$indexWrapper) {
+          return;
+        }
+
+        $indexWrapper.innerHTML = glide.index + 1;
+      })
+
+      glide.mount();
     </script>
 
     
