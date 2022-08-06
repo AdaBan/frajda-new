@@ -2,6 +2,14 @@
     "title": "Testimonials",
     "items": [
         {
+            "quote": "Ada and Paulina are great to work with. They understood our needs, worked super quickly, without unnecessary fluff. Always taking our feedback into account but also coming in with great recommendations. And last but not least - they're just great people to interact with! I highly recommend them.",
+            "author": {
+                "name": "Paweł Jaszczurowski",
+                "role": "Co-founder & CEO at Demoboost",
+                "image": "/assets/testimonials/pawel-jaszczurowski.jpg"
+            }
+        },
+        {
             "quote": "Internal stakeholders were extremely pleased with the professional-looking and high-quality design of the platform. The team stood out for their attention to detail; they went beyond what the client requested. They used Slack, Zoom, and Loom to communicate and were very responsive.",
             "author": {
                 "name": "Mario Rudhart",
@@ -11,3 +19,5 @@
         }
     ]
 }
+
+

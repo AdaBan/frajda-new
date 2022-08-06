@@ -1,6 +1,10 @@
 .section {
     position: relative;
     padding: clamp(2.5rem, 10vw, 6rem) 0;
+
+    &--small-padding-top {
+        padding-top: 1.5rem;
+    }
     
     &__title {
         max-width: 12ch;

@@ -1,0 +1,39 @@
+.glide {
+    &__navigation {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: clamp(3rem, 6vw, 4.5rem);
+    }
+
+    &__pagination {
+        font-size: 1.25rem;
+    }
+
+    &__arrow {
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: .25rem;
+        border-radius: 50%;
+        border: 1px solid get-color("light-shade");
+        transition: .3s ease;
+
+        &--right {
+            transform: scaleX(-1);
+            margin-left: .33rem;
+        }
+
+        &--disabled {
+            color: get-color("light-shade");
+            opacity: .75;
+            pointer-events: none;
+            cursor: auto;
+        }
+
+        &:hover,
+        &:focus {
+            border-color: get-color("primary");
+        }
+    }
+}

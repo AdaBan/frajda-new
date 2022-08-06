@@ -107,7 +107,7 @@
       </ul>
     </div>
   </section>
-  <section class="section">
+  <section class="section section--small-padding-top">
     <div class="container">
       <h2 class="visually-hidden">{{ testimonials.title }}</h2>
       <div class="glide">
@@ -135,14 +135,19 @@
             {% endfor %}
           </ul>
         </div>
-        {# <div class="testimonials-section__navigation glide__arrows" data-glide-el="controls">
-          <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="Go backwards">
-            <
-          </button>
-          <button class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="Go forwards">
-            >
-          </button>
-        </div> #}
+        <div class="glide__navigation">
+          <div class="glide__pagination">
+            1/5
+          </div>
+          <div class=" glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="Go backwards">
+              {% svg "arrow-left" %}
+            </button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="Go forwards">
+              {% svg "arrow-left" %}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -191,7 +196,7 @@
     <h2 class="visually-hidden">Contact us</h2>
     <div class="container">
       <div class="footer__inner">
-          <div class="footer__brand-image">
+          <div class="footer__logo">
               {% svg "logo" %}
           </div>
           <div class="footer__time">

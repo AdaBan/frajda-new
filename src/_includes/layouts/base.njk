@@ -33,11 +33,11 @@
       import Lazyload from 'https://cdn.skypack.dev/vanilla-lazyload';
       const lazyload = new Lazyload();
     </script>
-{# 
+
     <script src="{{ 'https://cdn.jsdelivr.net/npm/@glidejs/glide' | url }}"></script>
     <script defer>
-      new Glide('.glide').mount()
-    </script> #}
+      new Glide('.glide', {type: 'carousel'}).mount()
+    </script>
 
     {# mobile navigation script #}
     <script async>
@@ -145,6 +145,13 @@
         } else {
           ev.target.classList.toggle('-is-active');
           $accordionPanel.classList.toggle('-is-active');
+
+          $accordionPanel.parentNode.scrollIntoView(
+            {
+              behavior: 'smooth',
+              block: 'start',
+              inline: 'nearest',
+            });
         }
       }
 

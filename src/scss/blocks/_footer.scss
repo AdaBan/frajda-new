@@ -1,6 +1,7 @@
 .footer {
     &__logo {
         width: $logo-width;
+        aspect-ratio: $logo-aspect-ratio;
         margin-bottom: 4rem;
     }
 
