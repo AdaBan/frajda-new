@@ -1,5 +1,5 @@
 ---
-title: 'Base Project'
-metaDesc: 'Don’t forget the meta desc Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.'
+title: 'Frajda Studio – Design & Development Agency'
+metaDesc: 'We help companies connect with users through outstanding design and scalable front-end development.'
 layout: 'layouts/home.njk'
 ---
