@@ -137,7 +137,8 @@
         </div>
         <div class="glide__navigation">
           <div class="glide__pagination">
-            1/5
+            <span class="glide__pagination-number" data-glide-index>1</span>/
+            <span class="glide__pagination-number">{{ testimonials.items | length}}</span>
           </div>
           <div class=" glide__arrows" data-glide-el="controls">
             <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="Go backwards">

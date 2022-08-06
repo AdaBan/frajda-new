@@ -11,6 +11,11 @@
         font-size: 1.25rem;
     }
 
+    &__pagination-number {
+        display: inline-block;
+        width: .666em;
+    }
+
     &__arrow {
         width: 2.5rem;
         height: 2.5rem;
@@ -26,14 +31,17 @@
 
         &--disabled {
             color: get-color("light-shade");
-            opacity: .75;
+            border-color: currentColor;
+            opacity: .5;
             pointer-events: none;
             cursor: auto;
+            outline: none !important;
         }
 
         &:hover,
         &:focus {
-            border-color: get-color("primary");
+            border-color: currentColor;
+            outline-color: currentColor;
         }
     }
 }

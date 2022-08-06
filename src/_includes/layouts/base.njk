@@ -37,7 +37,18 @@
 
     <script src="{{ 'https://cdn.jsdelivr.net/npm/@glidejs/glide' | url }}"></script>
     <script defer>
-      new Glide('.glide', {type: 'carousel'}).mount()
+      const glide = new Glide('.glide', {rewind: false});
+      const $indexWrapper = document.querySelector('[data-glide-index]');
+
+      glide.on('move.after', function () {
+        if (!$indexWrapper) {
+          return;
+        }
+
+        $indexWrapper.innerHTML = glide.index + 1;
+      })
+
+      glide.mount();
     </script>
 
     {# mobile navigation script #}
