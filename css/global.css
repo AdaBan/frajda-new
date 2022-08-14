@@ -884,21 +884,20 @@ svg {
 .hero__description-line {
   white-space: nowrap;
 }
-.hero__image-wrapper {
+.hero__shapes-wrapper {
   position: relative;
   width: 125%;
   max-width: 719px;
   height: 28vh;
   margin-left: -5%;
 }
-.hero__image {
+.hero__shapes-wrapper svg {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
-  object-fit: contain;
-  object-position: left bottom;
+  width: 100%;
+  height: auto;
+  overflow: visible;
 }
 @media (min-width: 1024px) {
   .hero__content {
