@@ -272,23 +272,19 @@
                <ul class="services-list__item-tags tags-list">
                  
                     <li class="tags-list__item tag">
-                      UX design
+                      UX + UI Design
                     </li>
                   
                     <li class="tags-list__item tag">
-                      UI design
+                      Webflow Development
                     </li>
                   
                     <li class="tags-list__item tag">
-                      Design Systems
-                    </li>
-                  
-                    <li class="tags-list__item tag">
-                      Websites
+                      Webflow Onboarding
                     </li>
                   
               </ul>
-              <p class="services-list__item-description">Webflow description</p>
+              <p class="services-list__item-description">We design and implement fast, scalable, responsive, and SEO-friendly websites with Webflow. On top of that, we provide you with one-to-one learning sessions and a clear system of managing content so you can take full control of your website after the hand-off.</p>
             </div>  
           </li>
         
@@ -333,18 +329,15 @@
                 
                   <div class="project__image-wrapper">
                     
-                    <img class="project__image lazy" data-src="/frajda-new/assets/work/augmenteers-configurator-1.png" alt="Furniture AR configurator design" />
+                    <img class="project__image lazy" data-src="/frajda-new/assets/work/augmenteers-configurator-1.png" alt="Mobile view of a furniture configurator with controls and 3d model of a drawer." />
                     
                     
                   </div>
                 
                   <div class="project__image-wrapper">
                     
+                    <img class="project__image lazy" data-src="/frajda-new/assets/work/augmenteers-configurator-2.png" alt="Desktop view of a furniture configurator with controls and 3d model of a drawer" />
                     
-                    <video class="project__image lazy" data-src="/frajda-new/assets/work/augmenteers-configurator-2.mp4" autoplay loop muted playsinline>
-                      <source data-src="/frajda-new/assets/work/augmenteers-configurator-2.mp4" type="video/mp4" />
-                      Sorry, your browser doesn't support embedded videos.
-                    </video>
                     
                   </div>
                 
@@ -571,7 +564,7 @@
                     
                   </ul>
                 </div>
-                <p class="team-member__description">A graduate of cultural studies, but a programmer by profession. I have gained experience in Saatchi &amp; Saatchi IS and SYZYGY agencies for clients such as Microsoft, Mercedes-Benz and the Polish Football Association.</p>
+                <p class="team-member__description">I’m a cultural studies graduate turned front-end developer. I’ve gained my professional experience working for various clients in the Warsaw branch of the global advertising agency Saatchi&amp;Saatchi and in a software house SYZYGY, as well as being an in-house front-end developer for a fast-growing fem-tech startup Your KAYA. While coding, I care about user experience, performance, and reusability of code. While communicating, I value transparency, mutual respect, kindness, and a sense of humor.</p>
               </div>
             
           </div>
@@ -592,7 +585,7 @@
           </div>
           <div class="footer__time">
             <p class="footer__small">Based in Warsaw,<span class="footer__small-indent">working worldwide.</span></p>
-            <p class="footer__small">Current time <time data-current-time></time></p>
+            <p class="footer__small">Current time <span data-current-time></span></p>
           </div>
           <div class="footer__contact">
             <p class="footer__major">We are available for new projects, let’s have a chat.</p>
@@ -683,9 +676,6 @@
     </script>
 
     
-    
-
-    
     <script async>
       const $accordionTriggers = document.querySelectorAll('[data-accordion-trigger]');
       const $accordionPanels = document.querySelectorAll('[data-accordion-panel]');
@@ -725,9 +715,13 @@
 
       const displayTime = () => {
         const time = new Date();
-        const formattedTime = time.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', weekday: 'long' });
-	
-				$dateContainer.innerHTML = formattedTime;
+        const hours = time.getHours();
+        const formattedHours = hours % 12 || 12; // AM / PM
+        const minutes =  String(time.getMinutes()).padStart(2, '0');
+        const ampm = hours >= 12 ? 'pm' : 'am';
+        const weekday = time.toLocaleString('en-US', { weekday: 'long' });
+
+				$dateContainer.innerHTML = formattedHours + '<span class="footer__seconds">:</span>' + minutes + ' ' + ampm + ', ' + weekday;
       }
 
       const interval = setInterval(() => {
