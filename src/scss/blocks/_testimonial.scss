@@ -1,5 +1,4 @@
 .testimonial {
-    max-width: 32ch;
     margin: 0 auto;
     font-size: $font-size-h-3;
 
@@ -11,5 +10,10 @@
     &__footer {
         margin-top: 4rem;
         font-size: clamp(.875rem, 2vw, 1rem);
+    }
+
+    @include media-query('lg') {
+        max-width: 845px;
+        margin: 0 auto;
     }
 }

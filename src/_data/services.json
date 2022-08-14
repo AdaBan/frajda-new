@@ -24,8 +24,8 @@
       },
       {
         "name": "Webflow development",
-        "description": "Webflow description",
-        "tags": ["UX design", "UI design", "Design Systems", "Websites"],
+        "description": "We design and implement fast, scalable, responsive, and SEO-friendly websites with Webflow. On top of that, we provide you with one-to-one learning sessions and a clear system of managing content so you can take full control of your website after the hand-off.",
+        "tags": ["UX + UI Design", "Webflow Development", "Webflow Onboarding"],
         "slug": "webflow",
         "color": "black"
       }

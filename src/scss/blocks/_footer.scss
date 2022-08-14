@@ -1,7 +1,17 @@
+@keyframes blink {
+    0% {
+      opacity: 0;
+    }
+  
+    49%  { opacity: 0; }
+    50%  { opacity: 1; }
+    100% { opacity: 1; }
+  }
+
 .footer {
     &__logo {
         width: $logo-width;
-        aspect-ratio: $logo-aspect-ratio;
+        aspect-ratio: 4.4 / 1;
         margin-bottom: 4rem;
     }
 
@@ -38,6 +48,10 @@
 
     &__link-wrapper {
         list-style-type: none;
+    }
+
+    &__seconds {
+        animation: blink 1s linear infinite;
     }
 
     @include media-query('lg') {

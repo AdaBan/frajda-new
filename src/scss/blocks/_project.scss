@@ -36,11 +36,22 @@
         line-height: 0;
     }
 
+    &__image-wrapper {
+        width: 100%;
+        overflow: hidden;
+    }
+
     &__image {
         width: 100%;
         aspect-ratio: 1/1;
         object-fit: cover;
-        object-position: center;
+        object-position: center;    
+    }
+
+    // video black edges fix
+    video {
+        width: 102%;
+        margin-left: -1%;
     }
 
     @include media-query('md') {
@@ -59,8 +70,6 @@
         }
 
         &__image-wrapper {
-            width: 100%;
-            overflow: hidden;
             border-radius: 1.25rem;
         }
 

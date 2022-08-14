@@ -10,10 +10,11 @@
         "images": [
           {
             "url": "/assets/work/augmenteers-configurator-1.png",
-            "alt": "Furniture AR configurator design"
+            "alt": "Mobile view of a furniture configurator with controls and 3d model of a drawer."
           },
           {
-            "videoUrl": "/assets/work/augmenteers-configurator-2.mp4"
+            "url": "/assets/work/augmenteers-configurator-2.png",
+            "alt": "Desktop view of a furniture configurator with controls and 3d model of a drawer"
           }
         ]
       },
