@@ -2,11 +2,11 @@
     "title": "About us",
     "description": {
         "lead": "We are a product designer and a frontend developer duo.",
-        "body": "Our goal is to deliver high quality interfaces that solve business problems and offer a great experience to the users.",
+        "body": "Our goal is to deliver high quality interfaces that solve business problems and offer a first-class experience to the users.",
         "small": {
-           "line1": "We believe that creating a digital product",
-           "line2": "is about solving problems",
-           "line3": "and satisfying users' needs."
+           "line1": "We're driven to work with kind people",
+           "line2": "who believe that open communication",
+           "line3": "is the key to creating great products."
         }
     },
     "subtitle": "Get to know us better",
@@ -43,7 +43,7 @@
                     "href": "https://www.instagram.com/ada.banaszak/"
                 }
             ],
-            "description": "I’m a cultural studies graduate turned front-end developer. I’ve gained my professional experience working for various clients in the Warsaw branch of the global advertising agency Saatchi&Saatchi and in a software house SYZYGY, as well as being an in-house front-end developer for a fast-growing fem-tech startup Your KAYA. While coding, I care about user experience, performance, and reusability of code. While communicating, I value transparency, mutual respect, kindness, and a sense of humor."
+            "description": "I’m a cultural studies graduate turned front-end developer. I’ve gained my professional experience working for various clients in the Warsaw branch of the global advertising agency Saatchi&Saatchi and in a software house SYZYGY, as well as being an in-house front-end developer for a fast-growing fem-tech startup. While coding, I care about user experience, performance, and reusability of code. While communicating, I value transparency, mutual respect, kindness, and a sense of humor."
         }
     ]
 }
