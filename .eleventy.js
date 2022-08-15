@@ -22,7 +22,6 @@ module.exports = config => {
   });
 
   return {
-    pathPrefix: '/frajda-new/',
     markdownTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
