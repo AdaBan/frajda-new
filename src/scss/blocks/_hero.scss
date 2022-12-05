@@ -3,6 +3,7 @@
     width: 100%;
     overflow: hidden;
     background: get-color('light-glare');
+    z-index: 1;
 
     &__inner {
         position: relative;

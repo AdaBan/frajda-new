@@ -3,18 +3,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <link rel="icon" type="image/png" href="{{ '/assets/favicon.png' | url }}"/>
     {% include "partials/meta-info.njk" %}
-    
-    <link rel="stylesheet" href="{{ '/css/global.css' | url }}" />
+
+    <link rel="stylesheet" href="{{ '/css/global.css' | url }}"/>
 
     {# Add facility for pages to declare an array of stylesheet paths #}
     {% if pageStylesheets %}
       {% for item in pageStylesheets %}
-        <link rel="stylesheet" media="print" href="{{ item }}?{{ assetHash }}" onload="this.media='all'" />
+        <link rel="stylesheet" media="print" href="{{ item }}?{{ assetHash }}" onload="this.media='all'"/>
       {% endfor %}
     {% endif %}
   </head>
@@ -28,7 +28,7 @@
     </main>
 
     <!-- TODO: move js do _data files -->
-    
+
     {# lazy loading script #}
     <script type="module" async>
       import Lazyload from 'https://cdn.skypack.dev/vanilla-lazyload';
@@ -63,12 +63,20 @@
         if (!$navigation) {
           return;
         }
-        
-        $buttonOpen.classList.remove('-is-hidden');
-        $buttonClose.classList.add('-is-hidden');
-        $buttonClose.classList.remove('-is-reversed'); // color animation
 
-        $navigation.classList.remove('-is-active');
+        $buttonOpen
+          .classList
+          .remove('-is-hidden');
+        $buttonClose
+          .classList
+          .add('-is-hidden');
+        $buttonClose
+          .classList
+          .remove('-is-reversed'); // color animation
+
+        $navigation
+          .classList
+          .remove('-is-active');
         document.body.style.overflow = 'auto';
       }
       const openNavigation = () => {
@@ -76,13 +84,21 @@
           return;
         }
 
-        $buttonClose.classList.remove('-is-hidden');
-        $buttonOpen.classList.add('-is-hidden');
-        $navigation.classList.add('-is-active');
+        $buttonClose
+          .classList
+          .remove('-is-hidden');
+        $buttonOpen
+          .classList
+          .add('-is-hidden');
+        $navigation
+          .classList
+          .add('-is-active');
         document.body.style.overflow = 'hidden';
 
         setTimeout(() => {
-          $buttonClose.classList.add('-is-reversed'); // color animation
+          $buttonClose
+            .classList
+            .add('-is-reversed'); // color animation
         }, 400);
       }
       $buttonOpen.addEventListener('click', openNavigation);
@@ -96,32 +112,42 @@
       const $accordionPanels = document.querySelectorAll('[data-accordion-panel]');
 
       onTriggerClick = (ev) => {
-        const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
-        const controlAttr = ev.target.getAttribute('aria-controls');
+        const isDesktop = window
+          .matchMedia('(min-width: 1024px)')
+          .matches;
+        const controlAttr = ev
+          .target
+          .getAttribute('aria-controls');
         const $accordionPanel = document.querySelector(`#${controlAttr}`);
 
         if (isDesktop) {
           $accordionTriggers.forEach(t => t.classList.remove('-is-active'));
           $accordionPanels.forEach(t => t.classList.remove('-is-active'));
-          ev.target.classList.add('-is-active');
-          $accordionPanel.classList.add('-is-active');
+          ev
+            .target
+            .classList
+            .add('-is-active');
+          $accordionPanel
+            .classList
+            .add('-is-active');
         } else {
-          ev.target.classList.toggle('-is-active');
-          $accordionPanel.classList.toggle('-is-active');
+          ev
+            .target
+            .classList
+            .toggle('-is-active');
+          $accordionPanel
+            .classList
+            .toggle('-is-active');
 
-          $accordionPanel.parentNode.scrollIntoView(
-            {
-              behavior: 'smooth',
-              block: 'start',
-              inline: 'nearest',
-            });
+          $accordionPanel
+            .parentNode
+            .scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
         }
       }
 
       for (let trigger of $accordionTriggers) {
         trigger.addEventListener('click', onTriggerClick)
       }
-
     </script>
 
     {# date script #}
@@ -132,16 +158,18 @@
         const time = new Date();
         const hours = time.getHours();
         const formattedHours = hours % 12 || 12; // AM / PM
-        const minutes =  String(time.getMinutes()).padStart(2, '0');
-        const ampm = hours >= 12 ? 'pm' : 'am';
-        const weekday = time.toLocaleString('en-US', { weekday: 'long' });
+        const minutes = String(time.getMinutes()).padStart(2, '0');
+        const ampm = hours >= 12
+          ? 'pm'
+          : 'am';
+        const weekday = time.toLocaleString('en-US', {weekday: 'long'});
 
-				$dateContainer.innerHTML = formattedHours + '<span class="footer__seconds">:</span>' + minutes + ' ' + ampm + ', ' + weekday;
+        $dateContainer.innerHTML = formattedHours + '<span class="footer__seconds">:</span>' + minutes + ' ' + ampm + ', ' + weekday;
       }
 
       const interval = setInterval(() => {
-				displayTime();
-			}, 10000);
+        displayTime();
+      }, 10000);
 
       displayTime();
     </script>

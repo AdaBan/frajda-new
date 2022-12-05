@@ -49,7 +49,7 @@
     }
 
     &__testimonial {
-        padding: 2em 0 0;
+        padding: 3rem 0 0;
     }
 
     // video black edges fix
@@ -82,6 +82,10 @@
             flex-basis: 0;
             flex-grow: 0;
             flex-shrink: 0;
+        }
+
+        &__testimonial {
+            padding: 8rem 0 4rem;
         }
     }
 }

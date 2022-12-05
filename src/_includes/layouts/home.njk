@@ -28,155 +28,159 @@
       </div>
     </div>
   </div>
-  <section class="section">
-    <div class="section__anchor" id="services" data-anchor></div>
-    <div class="container">
-      <h2 class="section__title">{{ services.title }}</h2>
 
-      <ul class="services-list">
-        {% for item in services.items %}
-          <li class="services-list__item">
-            <h3 class="services-list__item-title">
-              <button
+  <div class="main">
+    <section class="section">
+      <div class="section__anchor" id="services" data-anchor></div>
+      <div class="container">
+        <h2 class="section__title">{{ services.title }}</h2>
+
+        <ul class="services-list">
+          {% for item in services.items %}
+            <li class="services-list__item">
+              <h3 class="services-list__item-title">
+                <button
                 class="services-list__item-trigger services-list__item-trigger--{{item.color}}
                 {% if loop.index0 === 0 %}-is-active{% endif %}"
                 data-accordion-trigger
                 aria-controls="{{item.slug}}"
               >
-                {{ item.name }}
-              </button>
-            </h3>
-            <div class="services-list__item-body {% if loop.index0 === 0 %}-is-active{% endif %}" id="{{item.slug}}" data-accordion-panel>
-              <ul class="services-list__item-tags tags-list">
-                {% for tag in item.tags %}
-                  <li class="tags-list__item tag">
-                    {{ tag }}
-                  </li>
-                {% endfor %}
-              </ul>
-              <p class="services-list__item-description">{{ item.description }}</p>
-            </div>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </section>
-  <section class="section">
-    <div class="section__anchor" id="work" data-anchor></div>
-    <div class="container">
-      <h2 class="section__title">{{ projects.title }}</h2>
-      <div class="projects-list">
-        {% for item in projects.items %}
-          <article class="projects-list__item project">
-            <div class="project__col">
-              <h3 class="project__title">
-                {{ item.name }}
+                  {{ item.name }}
+                </button>
               </h3>
-              <p class="project__client">{{ item.client }}</p>
-              <div class="project__tags">
-                <ul class="tags-list">
+              <div class="services-list__item-body {% if loop.index0 === 0 %}-is-active{% endif %}" id="{{item.slug}}" data-accordion-panel>
+                <ul class="services-list__item-tags tags-list">
                   {% for tag in item.tags %}
-                    <li class="tags-list__item tag">{{ tag }}</li>
+                    <li class="tags-list__item tag">
+                      {{ tag }}
+                    </li>
                   {% endfor %}
                 </ul>
+                <p class="services-list__item-description">{{ item.description }}</p>
               </div>
-            </div>
-            <div class="project__col">
-              <p class="project__description">{{ item.description }}</p>
-              {% if item.live %}
-                <a class="project__link" href="{{item.live}}" target="_blank" rel="nofollow">
-                See live
-                <i class="project__link-icon">{% svg "new-tab" %}</i>
-                </a>
-              {% else %}
-                <p class="project__link">
-                Case study coming soon
-                <i class="project__link-icon">{% svg "timer" %}</i>
-                </p>
-              {% endif %}
-            </div>
-            <div class="project__images">
-              {% for asset in item.images %}
-                <div class="project__image-wrapper">
-                  {% if asset.url %}
-                    <img class="project__image lazy" data-src="{{ asset.url | url }}" alt="{{ asset.alt }}"/>
-                  {% endif %}
-                  {% if asset.videoUrl %}
-                    <video class="project__image lazy" data-src="{{ asset.videoUrl| url }}" autoplay loop muted playsinline>
-                      <source data-src="{{ asset.videoUrl| url }}" type="video/mp4"/>
-                      Sorry, your browser doesn't support embedded videos.
-                    </video>
-                  {% endif %}
-                </div>
-              {% endfor %}
-            </div>
-            {% if item.testimonial %}
-              <blockquote class="project__testimonial testimonial">
-                <p class="testimonial__quote"> 
-                  “{{ item.testimonial.quote }}”
-                </p>
-                <footer class="testimonial__footer author">
-                  {% if item.testimonial.author.image %}
-                    <div class="author__image-wrapper">
-                      <img class="author__image lazy" data-src="{{ item.testimonial.author.image | url }}" alt=""/>
-                    </div>
-                  {% endif %}
-                  <div>
-                    <cite class="author__name weight-medium">
-                      {{ item.testimonial.author.name }}
-                    </cite>
-                    <cite class="author__description">
-                      {{ item.testimonial.author.role }}
-                    </cite>
-                  </div>
-                </footer>
-              </blockquote>
-            {% endif %}
-          </article>
-        {% endfor %}
+            </li>
+          {% endfor %}
+        </ul>
       </div>
-    </div>
-  </section>
-  <section class="about">
-    <h2 class="visually-hidden">{{ about.tile }}</h2>
-    <div class="about__intro section bg-dark color-light">
-      <div class="section__anchor" id="about" data-anchor></div>
+    </section>
+    <section class="section">
+      <div class="section__anchor" id="work" data-anchor></div>
       <div class="container">
-        <p class="about__description">{{ about.description.lead }}</p>
-        <p class="about__description">{{ about.description.body }}</p>
-        <p class="about__description about__description--small">
-          <span class="about__description-line">{{ about.description.small.line1 }}</span>
-          <span class="about__description-line about__description-line--indent">{{ about.description.small.line2 }}</span>
-          <span class="about__description-line">{{ about.description.small.line3 }}</span>
-        </p>
-      </div>
-    </div>
-    <div class="section">
-      <div class="container">
-        <div class="about__team">
-          <h3 class="about__team-title">{{ about.subtitle }}</h3>
-          <div class="about__team-list">
-            {% for person in about.team %}
-              <div class="team-member">
-                <div>
-                  <h4 class="team-member__name weight-medium">{{ person.name }}</h4>
-                  <p class="team-member__role">{{ person.role }}</p>
-                  <ul class="team-member__links">
-                    {% for link in person.links %}
-                      <li class="team-member__link-wrapper">
-                        <a href="{{ link.href }}" target="_blank">{{ link.name }}</a>
-                      </li>
+        <h2 class="section__title">{{ projects.title }}</h2>
+        <div class="projects-list">
+          {% for item in projects.items %}
+            <article class="projects-list__item project">
+              <div class="project__col">
+                <h3 class="project__title">
+                  {{ item.name }}
+                </h3>
+                <p class="project__client">{{ item.client }}</p>
+                <div class="project__tags">
+                  <ul class="tags-list">
+                    {% for tag in item.tags %}
+                      <li class="tags-list__item tag">{{ tag }}</li>
                     {% endfor %}
                   </ul>
                 </div>
-                <p class="team-member__description">{{ person.description }}</p>
               </div>
-            {% endfor %}
+              <div class="project__col">
+                <p class="project__description">{{ item.description }}</p>
+                {% if item.live %}
+                  <a class="project__link" href="{{item.live}}" target="_blank" rel="nofollow">
+                See live
+                <i class="project__link-icon">{% svg "new-tab" %}</i>
+                  </a>
+                {% else %}
+                  <p class="project__link">
+                Case study coming soon
+                <i class="project__link-icon">{% svg "timer" %}</i>
+                  </p>
+                {% endif %}
+              </div>
+              <div class="project__images">
+                {% for asset in item.images %}
+                  <div class="project__image-wrapper">
+                    {% if asset.url %}
+                      <img class="project__image lazy" data-src="{{ asset.url | url }}" alt="{{ asset.alt }}"/>
+                    {% endif %}
+                    {% if asset.videoUrl %}
+                      <video class="project__image lazy" data-src="{{ asset.videoUrl| url }}" autoplay loop muted playsinline>
+                        <source data-src="{{ asset.videoUrl| url }}" type="video/mp4"/>
+                      Sorry, your browser doesn't support embedded videos.
+                    </video>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              </div>
+              {% if item.testimonial %}
+                <blockquote class="project__testimonial testimonial">
+                  <p class="testimonial__quote"> 
+                  “{{ item.testimonial.quote }}”
+                </p>
+                  <footer class="testimonial__footer author">
+                    {% if item.testimonial.author.image %}
+                      <div class="author__image-wrapper">
+                        <img class="author__image lazy" data-src="{{ item.testimonial.author.image | url }}" alt=""/>
+                      </div>
+                    {% endif %}
+                    <div>
+                      <cite class="author__name weight-medium">
+                        {{ item.testimonial.author.name }}
+                      </cite>
+                      <cite class="author__description">
+                        {{ item.testimonial.author.role }}
+                      </cite>
+                    </div>
+                  </footer>
+                </blockquote>
+              {% endif %}
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <section class="about">
+      <h2 class="visually-hidden">{{ about.tile }}</h2>
+      <div class="about__intro section bg-dark color-light">
+        <div class="section__anchor" id="about" data-anchor></div>
+        <div class="container">
+          <p class="about__description">{{ about.description.lead }}</p>
+          <p class="about__description">{{ about.description.body }}</p>
+          <p class="about__description about__description--small">
+            <span class="about__description-line">{{ about.description.small.line1 }}</span>
+            <span class="about__description-line about__description-line--indent">{{ about.description.small.line2 }}</span>
+            <span class="about__description-line">{{ about.description.small.line3 }}</span>
+          </p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="container">
+          <div class="about__team">
+            <h3 class="about__team-title">{{ about.subtitle }}</h3>
+            <div class="about__team-list">
+              {% for person in about.team %}
+                <div class="team-member">
+                  <div>
+                    <h4 class="team-member__name weight-medium">{{ person.name }}</h4>
+                    <p class="team-member__role">{{ person.role }}</p>
+                    <ul class="team-member__links">
+                      {% for link in person.links %}
+                        <li class="team-member__link-wrapper">
+                          <a href="{{ link.href }}" target="_blank">{{ link.name }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                  <p class="team-member__description">{{ person.description }}</p>
+                </div>
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
+
   <footer class="footer section bg-light-glare">
     <div class="section__anchor" id="contact" data-anchor></div>
     <h2 class="visually-hidden">Contact us</h2>
@@ -203,8 +207,6 @@
             </li>
           {% endfor %}
         </ul>
+      </footer>
 
-      </div>
-    </div>
-  </footer>
-{% endblock %}
+    {% endblock %}
