@@ -1,95 +1,131 @@
 @keyframes blink {
-    0% {
-      opacity: 0;
-    }
-  
-    49%  { opacity: 0; }
-    50%  { opacity: 1; }
-    100% { opacity: 1; }
+  0% {
+    opacity: 0;
   }
 
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotateFooterVideo {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
 .footer {
+  &__logo {
+    width: $logo-width;
+    aspect-ratio: 4.4 / 1;
+    margin-bottom: 4rem;
+  }
+
+  &__small {
+    margin-bottom: 1em;
+    font-size: $font-size-body-s;
+    text-transform: uppercase;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &-indent {
+      display: block;
+      text-indent: 3ch;
+    }
+  }
+
+  &__major {
+    margin: 3rem 0 1.5rem;
+    font-size: $font-size-h-2;
+    line-height: 1.25;
+  }
+
+  &__address {
+    font-size: $font-size-h-3;
+    color: inherit;
+  }
+
+  &__links {
+    padding-left: 0;
+    margin: 3rem 0 0;
+  }
+
+  &__link-wrapper {
+    list-style-type: none;
+  }
+
+  &__seconds {
+    animation: blink 1s linear infinite;
+  }
+
+  &__surprise {
+    display: none;
+  }
+
+  @include media-query('lg') {
+    min-height: 100vh;
+    overflow: hidden;
+
+    &__inner {
+      position: relative;
+      display: grid;
+      grid-template-rows: calc(50vh - 7rem) auto;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      grid-template-areas:
+        'logo time'
+        'links contact';
+    }
+
     &__logo {
-        width: $logo-width;
-        aspect-ratio: 4.4 / 1;
-        margin-bottom: 4rem;
-    }
-
-    &__small {
-        margin-bottom: 1em;
-        font-size: $font-size-body-s;
-        text-transform: uppercase;
-
-        &:last-child {
-            margin: 0;
-        }
-
-        &-indent {
-            display: block;
-            text-indent: 3ch;
-        }
-    }
-
-    &__major {
-        margin: 3rem 0 1.5rem;
-        font-size: $font-size-h-2;
-        line-height: 1.25;
-    }
-
-    &__address {
-        font-size: $font-size-h-3;
-        color: inherit;
+      grid-area: logo;
     }
 
     &__links {
-        padding-left: 0;
-        margin: 3rem 0 0;
+      grid-area: links;
+      align-self: end;
     }
 
-    &__link-wrapper {
-        list-style-type: none;
+    &__contact {
+      grid-area: contact;
+      align-self: end;
     }
 
-    &__seconds {
-        animation: blink 1s linear infinite;
+    &__time {
+      grid-area: time;
+      align-self: center;
     }
 
-    @include media-query('lg') {
-        min-height: 100vh;
-
-        &__inner {
-            display: grid;
-            grid-template-rows: calc(50vh - 7rem) auto;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            grid-template-areas: 
-            "logo time"
-            "links contact";
-        }
-
-        &__logo {
-            grid-area: logo;
-
-        }
-
-        &__links {
-            grid-area: links;
-            align-self: end;
-        }
-
-        &__contact {
-            grid-area: contact;
-            align-self: end;
-        }
-
-        &__time {
-            grid-area: time;
-            align-self: center;
-        }
-
-        &__major {
-            margin-top: 0;
-        }
-
+    &__major {
+      margin-top: 0;
     }
+
+    &__surprise {
+      display: block;
+      position: absolute;
+      top: calc(50% - 8vw);
+      left: calc(50% - 8vw);
+      width: 16vw;
+      opacity: 0;
+      animation: rotateFooterVideo 1.2s linear infinite;
+    }
+  }
+
+  @media (hover: hover) {
+    &__contact a:hover + .footer__surprise {
+        opacity: 1;
+    }
+  }
 }

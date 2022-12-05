@@ -192,6 +192,9 @@
         <div class="footer__contact">
           <p class="footer__major">We are available for new projects, let’s have a chat.</p>
           <a class="footer__address" href="mailto:hello@frajda.studio">hello@frajda.studio</a>
+          <video class="footer__surprise lazy" data-src="/assets/footer/contact.mp4" autoplay loop muted playsinline>
+            <source data-src="{{ asset.videoUrl| url }}" type="video/mp4"/>
+          </video>
         </div>
         <ul class="footer__links">
           {% for link in navigation.socials %}
@@ -200,6 +203,7 @@
             </li>
           {% endfor %}
         </ul>
+
       </div>
     </div>
   </footer>
