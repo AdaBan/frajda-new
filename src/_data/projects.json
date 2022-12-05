@@ -1,52 +1,75 @@
 {
-    "title": "Recent projects",
-    "items": [
-      {
-        "name": "AR Configurator",
-        "client": "Augmenteers",
-        "description": "Augmenteers is a platform for online retailers to increase performance with 3D product visualizations. We designed and developed a user-friendly experience that lets customers configure the product, scan the QR code and see the model in their room using AR technology. We implemented the front-end of the web app in React.js.",
-        "tags": ["UX design", "Front-end development"],
-        "live": "https://vrxs.de/3d-product-configurator/cabinet/",
-        "images": [
-          {
-            "url": "/assets/work/augmenteers-configurator-1.png",
-            "alt": "Mobile view of a furniture configurator with controls and 3d model of a drawer."
-          },
-          {
-            "url": "/assets/work/augmenteers-configurator-2.png",
-            "alt": "Desktop view of a furniture configurator with controls and 3d model of a drawer"
-          }
+  "title":"Recent projects",
+  "items":[
+     {
+        "name":"AR Configurator",
+        "client":"Augmenteers",
+        "description":"Augmenteers is a platform for online retailers to increase performance with 3D product visualizations. We designed and developed a user-friendly experience that lets customers configure the product, scan the QR code and see the model in their room using AR technology. We implemented the front-end of the web app in React.js.",
+        "tags":[
+           "UX design",
+           "Front-end development"
+        ],
+        "live":"https://vrxs.de/3d-product-configurator/cabinet/",
+        "images":[
+           {
+              "url":"/assets/work/augmenteers-configurator-1.png",
+              "alt":"Mobile view of a furniture configurator with controls and 3d model of a drawer."
+           },
+           {
+              "url":"/assets/work/augmenteers-configurator-2.png",
+              "alt":"Desktop view of a furniture configurator with controls and 3d model of a drawer"
+           }
+        ],
+        "testimonial":{
+           "quote":"Internal stakeholders were extremely pleased with the professional-looking and high-quality design of the platform. The team stood out for their attention to detail – they went beyond what the client requested. They used Slack, Zoom, and Loom to communicate and were very responsive.",
+           "author":{
+              "name":"Mario Rudhart",
+              "role":"Co-founder & CEO at Augmenteers",
+              "image":"/assets/testimonials/mario-rudhart.jpg"
+           }
+        }
+     },
+     {
+        "name":"Augmenteers branding",
+        "client":"Augmenteers",
+        "description":"The goal was to present Augmenteers as a trustworthy, professional partner for 3D and Augmented Reality solutions, yet maintaining their young and innovative approach. We designed a logomark that represents the interpenetration of two worlds - real and virtual. The result of combining these two parts is a stable construction that shows professionalism and trust.",
+        "tags":[
+           "Brand identity"
+        ],
+        "live":"",
+        "images":[
+           {
+              "videoUrl":"/assets/work/augmenteers-branding.mp4"
+           }
         ]
-      },
-      {
-        "name": "Augmenteers branding",
-        "client": "Augmenteers",
-        "description": "The goal was to present Augmenteers as a trustworthy, professional partner for 3D and Augmented Reality solutions, yet maintaining their young and innovative approach. We designed a logomark that represents the interpenetration of two worlds - real and virtual. The result of combining these two parts is a stable construction that shows professionalism and trust.",
-        "tags": ["Brand identity"],
-        "live": "",
-        "images": [
-          {
-            "videoUrl": "/assets/work/augmenteers-branding.mp4"
-          }
-        ]
-      },
-      {
-        "name": "SaaS website redesign",
-        "client": "Demoboost",
-        "description": "Demoboost helps software companies deliver a demo experience that sells – internally and with partners. As a result of the growth and global expansion, their outdated website needed a fresh look. We proposed a new visual language and prepared all animated assets to show how the product works. The new website was implemented with a static site generator 11ty, with the focus on performance and user experience.",
-        "tags": ["Web design", "Front-end development"],
-        "live": "https://demoboost.com/",
-        "images": [
-          {
-            "url": "/assets/work/demoboost-website-1.png",
-            "alt": "Demoboost website product shot"
-          },
-          {
-            "url": "/assets/work/demoboost-website-2.png",
-            "alt": "Demoboost website product shot"
-          }
-        ]
-      }
-    ]
-  }
-  
+     },
+     {
+        "name":"SaaS website redesign",
+        "client":"Demoboost",
+        "description":"Demoboost helps software companies deliver a demo experience that sells – internally and with partners. As a result of the growth and global expansion, their outdated website needed a fresh look. We proposed a new visual language and prepared all animated assets to show how the product works. The new website was implemented with a static site generator 11ty, with the focus on performance and user experience.",
+        "tags":[
+           "Web design",
+           "Front-end development"
+        ],
+        "live":"https://demoboost.com/",
+        "images":[
+           {
+              "url":"/assets/work/demoboost-website-1.png",
+              "alt":"Demoboost website product shot"
+           },
+           {
+              "url":"/assets/work/demoboost-website-2.png",
+              "alt":"Demoboost website product shot"
+           }
+        ],
+        "testimonial":{
+           "quote":"Ada and Paulina are great to work with. They understood our needs, worked super quickly, without unnecessary fluff. Always taking our feedback into account but also coming in with great recommendations. And last but not least - they're just great people to interact with! I highly recommend them.",
+           "author":{
+              "name":"Paweł Jaszczurowski",
+              "role":"Co-founder & CEO at Demoboost",
+              "image":"/assets/testimonials/pawel-jaszczurowski.jpg"
+           }
+        }
+     }
+  ]
+}

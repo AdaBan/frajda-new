@@ -3,12 +3,12 @@
     font-size: $font-size-h-3;
 
     &__quote {
-        text-indent: 4em;
+        text-indent: 3em;
         letter-spacing: -0.01em;
     }
 
     &__footer {
-        margin-top: 4rem;
+        margin-top: 2.5em;
         font-size: clamp(.875rem, 2vw, 1rem);
     }
 

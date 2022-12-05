@@ -8,21 +8,21 @@
           A design & development studio crafting stunning front-end solutions.
         </h1>
         <div class="hero__content">
-           <p class="hero__description">
-              <span class="hero__description-line">We help companies connect with users</span>
-              <span class="hero__description-line hero__description-line--indent">through outstanding design</span>
-              <span class="hero__description-line">and&nbsp;scalable front-end development.</span>
+          <p class="hero__description">
+            <span class="hero__description-line">We help companies connect with users</span>
+            <span class="hero__description-line hero__description-line--indent">through outstanding design</span>
+            <span class="hero__description-line">and&nbsp;scalable front-end development.</span>
           </p>
           <div class="hero__shapes-wrapper">
             <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 719 247">
               <path d="M309 133a4 4 0 0 1 4-4h132a4 4 0 0 1 4 4v112H313a4 4 0 0 1-4-4V133Z" fill="#fff"/>
               <rect x="129" y="4" width="192" height="241" rx="4" fill="#1C1A1A"/>
               <mask id="a" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="129" y="4" width="192" height="241">
-              <path d="M129 8a4 4 0 0 1 4-4h184a4 4 0 0 1 4 4v237H133a4 4 0 0 1-4-4V8Z" fill="#0A0101"/></mask>
+                <path d="M129 8a4 4 0 0 1 4-4h184a4 4 0 0 1 4 4v237H133a4 4 0 0 1-4-4V8Z" fill="#0A0101"/></mask>
               <g opacity=".4" stroke="#fff" mask="url(#a)"><path d="M161-36.5v302M193-36.5v302M225-36.5v302M289-36.5v302M257-36.5v302"/></g>
               <circle data-hero-shape="circle" class="shape-circle" cx="644" cy="173" r="72" fill="#D1570E"/>
               <path data-hero-shape="half-circle" class="shape-half-circle" d="M10.312 61.906a1.974 1.974 0 0 1 2.417-1.395l270.51 72.483a1.974 1.974 0 0 1 1.396 2.417l-1.56 5.821c-20.298 75.752-98.161 120.707-173.914 100.409C33.409 221.343-11.546 143.48 8.752 67.727l1.56-5.82Z" fill="#464A31"/>
-              </svg>
+            </svg>
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@
     <div class="section__anchor" id="services" data-anchor></div>
     <div class="container">
       <h2 class="section__title">{{ services.title }}</h2>
-      
+
       <ul class="services-list">
         {% for item in services.items %}
           <li class="services-list__item">
@@ -43,19 +43,19 @@
                 data-accordion-trigger
                 aria-controls="{{item.slug}}"
               >
-                  {{ item.name }}
+                {{ item.name }}
               </button>
             </h3>
             <div class="services-list__item-body {% if loop.index0 === 0 %}-is-active{% endif %}" id="{{item.slug}}" data-accordion-panel>
-               <ul class="services-list__item-tags tags-list">
-                 {% for tag in item.tags %}
-                    <li class="tags-list__item tag">
-                      {{ tag }}
-                    </li>
-                  {% endfor %}
+              <ul class="services-list__item-tags tags-list">
+                {% for tag in item.tags %}
+                  <li class="tags-list__item tag">
+                    {{ tag }}
+                  </li>
+                {% endfor %}
               </ul>
               <p class="services-list__item-description">{{ item.description }}</p>
-            </div>  
+            </div>
           </li>
         {% endfor %}
       </ul>
@@ -65,9 +65,9 @@
     <div class="section__anchor" id="work" data-anchor></div>
     <div class="container">
       <h2 class="section__title">{{ projects.title }}</h2>
-      <ul class="projects-list">
+      <div class="projects-list">
         {% for item in projects.items %}
-          <li class="projects-list__item project">
+          <article class="projects-list__item project">
             <div class="project__col">
               <h3 class="project__title">
                 {{ item.name }}
@@ -76,87 +76,64 @@
               <div class="project__tags">
                 <ul class="tags-list">
                   {% for tag in item.tags %}
-                      <li class="tags-list__item tag">{{ tag }}</li>
-                    {% endfor %}
+                    <li class="tags-list__item tag">{{ tag }}</li>
+                  {% endfor %}
                 </ul>
               </div>
             </div>
             <div class="project__col">
               <p class="project__description">{{ item.description }}</p>
-               {% if item.live %}
-              <a class="project__link" href="{{item.live}}" target="_blank" rel="nofollow">
+              {% if item.live %}
+                <a class="project__link" href="{{item.live}}" target="_blank" rel="nofollow">
                 See live
                 <i class="project__link-icon">{% svg "new-tab" %}</i>
-              </a>
-             {% else %}
-             <p class="project__link">
+                </a>
+              {% else %}
+                <p class="project__link">
                 Case study coming soon
                 <i class="project__link-icon">{% svg "timer" %}</i>
-              </p>
+                </p>
               {% endif %}
             </div>
             <div class="project__images">
-                {% for asset in item.images %}
-                  <div class="project__image-wrapper">
-                    {% if asset.url %}
-                    <img class="project__image lazy" data-src="{{ asset.url | url }}" alt="{{ asset.alt }}" />
-                    {% endif %}
-                    {% if asset.videoUrl %}
+              {% for asset in item.images %}
+                <div class="project__image-wrapper">
+                  {% if asset.url %}
+                    <img class="project__image lazy" data-src="{{ asset.url | url }}" alt="{{ asset.alt }}"/>
+                  {% endif %}
+                  {% if asset.videoUrl %}
                     <video class="project__image lazy" data-src="{{ asset.videoUrl| url }}" autoplay loop muted playsinline>
-                      <source data-src="{{ asset.videoUrl| url }}" type="video/mp4" />
+                      <source data-src="{{ asset.videoUrl| url }}" type="video/mp4"/>
                       Sorry, your browser doesn't support embedded videos.
                     </video>
-                    {% endif %}
-                  </div>
-                {% endfor %}
-            </div>  
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </section>
-  <section class="section section--small-padding-top">
-    <div class="container">
-      <h2 class="visually-hidden">{{ testimonials.title }}</h2>
-      <div class="glide">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-            {% for testimonial in testimonials.items %}
-            <li class="glide__slide">
-              <blockquote class="testimonial">
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+            {% if item.testimonial %}
+              <blockquote class="project__testimonial testimonial">
                 <p class="testimonial__quote"> 
-                  “{{ testimonial.quote }}”
+                  “{{ item.testimonial.quote }}”
                 </p>
                 <footer class="testimonial__footer author">
-                  {% if testimonial.author.image %}
-                  <div class="author__image-wrapper">
-                    <img class="author__image lazy" data-src="{{ testimonial.author.image | url }}" alt="" />
-                  </div>
+                  {% if item.testimonial.author.image %}
+                    <div class="author__image-wrapper">
+                      <img class="author__image lazy" data-src="{{ item.testimonial.author.image | url }}" alt=""/>
+                    </div>
                   {% endif %}
                   <div>
-                    <cite class="author__name weight-medium">{{testimonial.author.name}}</cite>
-                    <cite class="author__description">{{testimonial.author.role}}</cite>
+                    <cite class="author__name weight-medium">
+                      {{ item.testimonial.author.name }}
+                    </cite>
+                    <cite class="author__description">
+                      {{ item.testimonial.author.role }}
+                    </cite>
                   </div>
                 </footer>
               </blockquote>
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
-        <div class="glide__navigation">
-          <div class="glide__pagination">
-            <span class="glide__pagination-number" data-glide-index>1</span>/
-            <span class="glide__pagination-number">{{ testimonials.items | length}}</span>
-          </div>
-          <div class=" glide__arrows" data-glide-el="controls">
-            <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="Go backwards">
-              {% svg "arrow-left" %}
-            </button>
-            <button class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="Go forwards">
-              {% svg "arrow-left" %}
-            </button>
-          </div>
-        </div>
+            {% endif %}
+          </article>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -171,7 +148,7 @@
           <span class="about__description-line">{{ about.description.small.line1 }}</span>
           <span class="about__description-line about__description-line--indent">{{ about.description.small.line2 }}</span>
           <span class="about__description-line">{{ about.description.small.line3 }}</span>
-         </p>
+        </p>
       </div>
     </div>
     <div class="section">
@@ -205,26 +182,25 @@
     <h2 class="visually-hidden">Contact us</h2>
     <div class="container">
       <div class="footer__inner">
-          <div class="footer__logo">
-              {% svg "logo" %}
-          </div>
-          <div class="footer__time">
-            <p class="footer__small">Based in Warsaw,<span class="footer__small-indent">working worldwide.</span></p>
-            <p class="footer__small">Current time <span data-current-time></span></p>
-          </div>
-          <div class="footer__contact">
-            <p class="footer__major">We are available for new projects, let’s have a chat.</p>
-            <a class="footer__address" href="mailto:hello@frajda.studio">hello@frajda.studio</a>
-          </div>
-          <ul class="footer__links">
-            {% for link in navigation.socials %}
-              <li class="footer__link-wrapper">
-                <a href="{{ link.href }}" target="_blank">{{ link.name }}</a>
-              </li>
-            {% endfor %}
-          </ul>
+        <div class="footer__logo">
+          {% svg "logo" %}
         </div>
+        <div class="footer__time">
+          <p class="footer__small">Based in Warsaw,<span class="footer__small-indent">working worldwide.</span></p>
+          <p class="footer__small">Current time <span data-current-time></span></p>
+        </div>
+        <div class="footer__contact">
+          <p class="footer__major">We are available for new projects, let’s have a chat.</p>
+          <a class="footer__address" href="mailto:hello@frajda.studio">hello@frajda.studio</a>
+        </div>
+        <ul class="footer__links">
+          {% for link in navigation.socials %}
+            <li class="footer__link-wrapper">
+              <a href="{{ link.href }}" target="_blank">{{ link.name }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </footer>
 {% endblock %}
-
