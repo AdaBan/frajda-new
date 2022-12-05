@@ -695,7 +695,7 @@ svg {
     top: 0;
     height: 100%;
     aspect-ratio: 1/1;
-    border: 1px solid #A5A5A5;
+    border: 1px solid #a5a5a5;
     border-radius: 50%;
     opacity: 0.4;
   }
@@ -1034,6 +1034,9 @@ svg {
   object-fit: cover;
   object-position: center;
 }
+.project__testimonial {
+  padding: 2em 0 0;
+}
 .project video {
   width: 102%;
   margin-left: -1%;
@@ -1331,11 +1334,11 @@ svg {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
 }
 .testimonial__quote {
-  text-indent: 4em;
+  text-indent: 3em;
   letter-spacing: -0.01em;
 }
 .testimonial__footer {
-  margin-top: 4rem;
+  margin-top: 2.5em;
   font-size: clamp(0.875rem, 2vw, 1rem);
 }
 @media (min-width: 1024px) {
