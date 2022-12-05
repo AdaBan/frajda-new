@@ -738,6 +738,14 @@ svg {
     opacity: 1;
   }
 }
+@keyframes rotateFooterVideo {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
 .footer__logo {
   width: clamp(8rem, 20vw, 11.25rem);
   aspect-ratio: 4.4/1;
@@ -774,11 +782,16 @@ svg {
 .footer__seconds {
   animation: blink 1s linear infinite;
 }
+.footer__surprise {
+  display: none;
+}
 @media (min-width: 1024px) {
   .footer {
     min-height: 100vh;
+    overflow: hidden;
   }
   .footer__inner {
+    position: relative;
     display: grid;
     grid-template-rows: calc(50vh - 7rem) auto;
     grid-template-columns: 1fr 1fr;
@@ -802,6 +815,20 @@ svg {
   }
   .footer__major {
     margin-top: 0;
+  }
+  .footer__surprise {
+    display: block;
+    position: absolute;
+    top: calc(50% - 8vw);
+    left: calc(50% - 8vw);
+    width: 16vw;
+    opacity: 0;
+    animation: rotateFooterVideo 1.2s linear infinite;
+  }
+}
+@media (hover: hover) {
+  .footer__contact a:hover + .footer__surprise {
+    opacity: 1;
   }
 }
 
