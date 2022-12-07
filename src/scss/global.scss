@@ -123,31 +123,10 @@ svg {
 
 .footer {
   position: fixed !important;
+  width: 100%;
   bottom: 0;
   left: 0;
   z-index: 0;
-}
-
-@keyframes fadeIn {
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.js-enabled {
-  .fade-in {
-    opacity: 0;
-    transform: translateY(1rem);
-  }
-
-  .fade-in.active {
-    animation: fadeIn 900ms 100ms forwards;
-  }
 }
 
 // Import utilities
@@ -172,3 +151,60 @@ svg {
 @import 'blocks/tags-list';
 @import 'blocks/team-member';
 @import 'blocks/testimonial';
+
+/* animations */
+@keyframes fadeIn {
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInVertically {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.js-enabled {
+  .fade-in {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  .fade-in.active {
+    animation: fadeIn 0.9s 0.1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+  }
+}
+
+@include media-query(lg) {
+  .site-head {
+    transform: translateY(-5rem);
+    animation: slideInVertically 0.8s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+  }
+
+  // .hero__title {
+  //   transform: translateY(4rem);
+  //   animation: slideInVertically .8s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+  // }
+}
+
+.cursor-dot {
+  position: fixed;
+  top: -1.5rem;
+  left: -1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  z-index: 10;
+  background: get-color(primary);
+  border-radius: 50%;
+}
+
+a, button {
+  z-index: 11;
+}

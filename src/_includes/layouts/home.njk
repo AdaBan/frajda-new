@@ -113,11 +113,11 @@
                 {% endfor %}
               </div>
               {% if item.testimonial %}
-                <blockquote class="project__testimonial testimonial fade-in">
-                  <p class="testimonial__quote"> 
+                <blockquote class="project__testimonial testimonial">
+                  <p class="testimonial__quote fade-in"> 
                   “{{ item.testimonial.quote }}”
                 </p>
-                  <footer class="testimonial__footer author">
+                  <footer class="testimonial__footer author fade-in">
                     {% if item.testimonial.author.image %}
                       <div class="author__image-wrapper">
                         <img class="author__image lazy" data-src="{{ item.testimonial.author.image | url }}" alt=""/>
