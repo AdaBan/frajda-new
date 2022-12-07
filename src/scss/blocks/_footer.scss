@@ -118,14 +118,14 @@
       top: calc(50% - 8vw);
       left: calc(50% - 8vw);
       width: 16vw;
-      opacity: 0;
+      opacity: 0 !important;
       animation: rotateFooterVideo 1.2s linear infinite;
     }
   }
 
   @media (hover: hover) {
     &__contact a:hover + .footer__surprise {
-        opacity: 1;
+        opacity: 1 !important;
     }
   }
 }

@@ -128,6 +128,28 @@ svg {
   z-index: 0;
 }
 
+@keyframes fadeIn {
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.js-enabled {
+  .fade-in {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  .fade-in.active {
+    animation: fadeIn 900ms 100ms forwards;
+  }
+}
+
 // Import utilities
 @import 'utilities/button-reset';
 @import 'utilities/container';

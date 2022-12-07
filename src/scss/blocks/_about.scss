@@ -1,4 +1,6 @@
 .about {
+  $block: &;
+
   &__description {
     max-width: 30ch;
     margin-bottom: 1em;
@@ -73,6 +75,12 @@
       display: grid;
       grid-template-columns: 1fr 2fr;
       gap: 1.5rem;
+    }
+
+    &__team-title {
+      position: sticky;
+      top: 3rem;
+      margin: 0;
     }
   }
 }

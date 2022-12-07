@@ -35,22 +35,6 @@
       const lazyload = new Lazyload();
     </script>
 
-    {# <script src="{{ 'https://cdn.jsdelivr.net/npm/@glidejs/glide' | url }}"></script>
-    <script defer>
-      const glide = new Glide('.glide', {rewind: false});
-      const $indexWrapper = document.querySelector('[data-glide-index]');
-
-      glide.on('move.after', function () {
-        if (!$indexWrapper) {
-          return;
-        }
-
-        $indexWrapper.innerHTML = glide.index + 1;
-      })
-
-      glide.mount();
-    </script> #}
-
     {# mobile navigation script #}
     <script async>
       const $buttonClose = document.querySelector('[data-nav-close]');
@@ -172,6 +156,37 @@
       }, 10000);
 
       displayTime();
+    </script>
+
+    {# scroll observer #}
+    <script async>
+      document.body.classList.add('js-enabled');
+      
+      function scrollTrigger(selector, options = {}) {
+        let els = document.querySelectorAll(selector)
+        els = Array.from(els)
+        els.forEach(el => {
+
+          addObserver(el, options)
+        })
+      }
+
+      function addObserver(el, options) {
+        let observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry
+                .target
+                .classList
+                .add('active')
+              observer.unobserve(entry.target)
+            }
+          })
+        }, options)
+        observer.observe(el)
+      }
+
+      scrollTrigger('.fade-in')
     </script>
   </body>
 </html>
