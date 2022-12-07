@@ -538,7 +538,7 @@ html {
 }
 
 body {
-  background: #fff;
+  background: #D3D3D3;
   color: #1C1A1A;
   font-family: "Euclid Circular", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.5;
@@ -606,6 +606,21 @@ svg {
   fill: currentColor;
   width: 100%;
   height: 100%;
+}
+
+.main {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 100vh;
+  background: white;
+}
+
+.footer {
+  position: fixed !important;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .button-reset {
@@ -722,6 +737,11 @@ svg {
     grid-template-columns: 1fr 2fr;
     gap: 1.5rem;
   }
+  .about__team-title {
+    position: sticky;
+    top: 3rem;
+    margin: 0;
+  }
 }
 
 @keyframes blink {
@@ -822,13 +842,13 @@ svg {
     top: calc(50% - 8vw);
     left: calc(50% - 8vw);
     width: 16vw;
-    opacity: 0;
+    opacity: 0 !important;
     animation: rotateFooterVideo 1.2s linear infinite;
   }
 }
 @media (hover: hover) {
   .footer__contact a:hover + .footer__surprise {
-    opacity: 1;
+    opacity: 1 !important;
   }
 }
 
@@ -886,6 +906,7 @@ svg {
   width: 100%;
   overflow: hidden;
   background: #D3D3D3;
+  z-index: 1;
 }
 .hero__inner {
   position: relative;
@@ -1062,7 +1083,7 @@ svg {
   object-position: center;
 }
 .project__testimonial {
-  padding: 2em 0 0;
+  padding: 3rem 0 0;
 }
 .project video {
   width: 102%;
@@ -1090,6 +1111,9 @@ svg {
     flex-basis: 0;
     flex-grow: 0;
     flex-shrink: 0;
+  }
+  .project__testimonial {
+    padding: 8rem 0 4rem;
   }
 }
 
@@ -1149,6 +1173,9 @@ svg {
   color: #878787;
   transform: translateX(-1.332em);
   transition: 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+}
+.services-list__item-trigger:hover {
+  color: #1C1A1A;
 }
 .services-list__item-trigger::before {
   content: "";
@@ -1373,6 +1400,51 @@ svg {
     max-width: 845px;
     margin: 0 auto;
   }
+}
+
+/* animations */
+@keyframes fadeIn {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInVertically {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.js-enabled .fade-in {
+  opacity: 0;
+  transform: translateY(1rem);
+}
+.js-enabled .fade-in.active {
+  animation: fadeIn 0.9s 0.1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+@media (min-width: 1024px) {
+  .site-head {
+    transform: translateY(-5rem);
+    animation: slideInVertically 0.8s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+  }
+}
+.cursor-dot {
+  position: fixed;
+  top: -1.5rem;
+  left: -1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  z-index: 10;
+  background: #D1570E;
+  border-radius: 50%;
+}
+
+a, button {
+  z-index: 11;
 }
 
 /*# sourceMappingURL=global.css.map */
