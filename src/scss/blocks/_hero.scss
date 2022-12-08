@@ -1,84 +1,113 @@
 .hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: get-color('light-glare');
+  z-index: 1;
+
+  &__inner {
     position: relative;
-    width: 100%;
-    overflow: hidden;
-    background: get-color('light-glare');
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding-top: clamp(6rem, calc(12vh + 8vw), 15rem);
+  }
 
-    &__inner {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-height: 100vh;
-        padding-top: clamp(6rem, calc(12vh + 8vw), 15rem);
+  &__title {
+    font-size: clamp(2rem, 10vw, 5rem); // according to design 5.5rem
+    font-weight: 400;
+    max-width: 65rem; // 55 rem according to design
+  }
+
+  &__description {
+    max-width: 41ch;
+    margin: 2rem 0 2rem auto;
+    font-size: clamp(0.75rem, 3vw, 0.875rem);
+    text-transform: uppercase;
+    text-align: right;
+
+    &-line {
+      white-space: nowrap;
     }
+  }
 
-    &__title {
-        font-size: clamp(2rem, 10vw, 5rem); // according to design 5.5rem
-        font-weight: 400;
-        max-width: 65rem; // 55 rem according to design
+  &__shapes-wrapper {
+    position: relative;
+    width: 125%;
+    max-width: 719px;
+    height: 28vh;
+    margin-left: -5%;
+
+    svg {
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: auto;
+      overflow: visible;
     }
+  }
 
-    &__description {
-        max-width: 41ch;
-        margin: 2rem 0 2rem auto;
-        font-size: clamp(.75rem, 3vw, .875rem);
-        text-transform: uppercase;
-        text-align: right;
+  &__lottie {
+    display: none;
+  }
 
-        &-line {
-            white-space: nowrap;
-        }
+  @media (min-width: 1024px) and (orientation: landscape) {
+    &__lottie {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      width: 100vw;
+      height: auto;
     }
 
     &__shapes-wrapper {
-        position: relative;
-        width: 125%;
-        max-width: 719px;
-        height: 28vh;
-        margin-left: -5%;
-
-        svg {
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: auto;
-            overflow: visible;
-        }
+      display: none;
     }
 
-    @include media-query('lg') {
-        &__content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-direction: row-reverse;
-        }
-
-        &::before {
-            content: "";
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            height: 85%;
-            aspect-ratio: 1/1;
-            border: 1px solid #A5A5A5;
-            border-radius: 50%;
-            opacity: 0.4;
-        }
-
-        &__description {
-            
-            text-align: left;
-            
-            &-line--indent {
-                display: block;
-                text-indent: 14ch;
-            }
-        }
-
+    &__inner {
+      position: static;
     }
+
+    &__description {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  @include media-query('lg') {
+    &__content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 85%;
+      aspect-ratio: 1/1;
+      border: 1px solid #a5a5a5;
+      border-radius: 50%;
+      opacity: 0.4;
+    }
+
+    &__description {
+      position: relative;
+      z-index: 2;
+      text-align: left;
+
+      &-line--indent {
+        display: block;
+        text-indent: 14ch;
+      }
+    }
+  }
 }

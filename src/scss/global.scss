@@ -36,6 +36,14 @@ $logo-width: clamp(8rem, 20vw, 11.25rem);
   font-style: normal;
 }
 
+@media screen and (max-width: 1023px) {
+  html,
+  body {
+    height: 100%;
+    height: -webkit-fill-available;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -114,21 +122,6 @@ svg {
   height: 100%;
 }
 
-.main {
-  position: relative;
-  z-index: 10;
-  margin-bottom: 100vh;
-  background: white;
-}
-
-.footer {
-  position: fixed !important;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
-}
-
 // Import utilities
 @import 'utilities/button-reset';
 @import 'utilities/container';
@@ -173,7 +166,7 @@ svg {
 
 .js-enabled {
   .fade-in {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(1rem);
   }
 
@@ -185,26 +178,61 @@ svg {
 @include media-query(lg) {
   .site-head {
     transform: translateY(-5rem);
-    animation: slideInVertically 0.8s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+    animation: slideInVertically 0.8s 0.2s cubic-bezier(0.33, 1, 0.68, 1) forwards;
   }
 
-  // .hero__title {
-  //   transform: translateY(4rem);
-  //   animation: slideInVertically .8s cubic-bezier(0.33, 1, 0.68, 1) forwards;
-  // }
+  .hero__title {
+    transform: translateY(4rem);
+    animation: slideInVertically 0.8s 0.2s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+  }
+
+  .main {
+    margin-bottom: 100vh;
+  }
+
+  .footer {
+    position: fixed !important;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+}
+
+.site-head {
+  z-index: 3;
+}
+
+.hero {
+  position: relative;
+  z-index: 2;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  background: white;
 }
 
 .cursor-dot {
-  position: fixed;
-  top: -1.5rem;
-  left: -1.5rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  z-index: 10;
-  background: get-color(primary);
-  border-radius: 50%;
+  display: none;
 }
 
-a, button {
+@media (hover: hover) {
+  .cursor-dot {
+    display: block;
+    position: fixed;
+    top: -1.5rem;
+    left: -1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    z-index: 1;
+    background: get-color(primary);
+    border-radius: 50%;
+  }
+}
+
+a,
+button {
   z-index: 11;
 }
