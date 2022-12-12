@@ -412,7 +412,7 @@
                     
                     
                       <video class="project__image lazy fade-in" data-src="/assets/work/augmenteers-branding.mp4" autoplay loop muted playsinline>
-                        <source src="/assets/work/augmenteers-branding.mp4" type="video/mp4"/>
+                        <source data-src="/assets/work/augmenteers-branding.mp4" type="video/mp4"/>
                       Sorry, your browser doesn't support embedded videos.
                     </video>
                     
@@ -584,7 +584,7 @@
           <p class="footer__major">We are available for new projects, let’s have a chat.</p>
           <a class="footer__address" href="mailto:hello@frajda.studio">hello@frajda.studio</a>
           <video class="footer__surprise lazy" data-src="/assets/footer/contact.mp4" autoplay loop muted playsinline>
-            <source src="." type="video/mp4"/>
+            <source data-src="." type="video/mp4"/>
           </video>
         </div>
         <ul class="footer__links">
@@ -606,13 +606,16 @@
 
     
     </main>
-
-    <!-- TODO: move js do _data files -->
     
-    <script type="module" async>
-      import Lazyload from 'https://cdn.skypack.dev/vanilla-lazyload';
-      const lazyload = new Lazyload();
+    
+    <script>
+      // Set the options globally
+      // to make LazyLoad self-initialize
+      window.lazyLoadOptions = {
+      };
     </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
 
     
     <script async>
@@ -767,6 +770,7 @@
       scrollTrigger('.fade-in', {threshold: .3})
     </script>
 
+    
     <script>
       document
         .body
@@ -790,13 +794,14 @@
       if (isDesktop) {
         include('https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js');
 
-         document
-        .body
-        .classList
-        .add('lottie');
+        document
+          .body
+          .classList
+          .add('lottie');
       }
     </script>
 
+    
     <script defer>
       const $circle = document.querySelector('.cursor-dot');
 
