@@ -606,13 +606,28 @@
 
     
     </main>
-    
-    
+
+    <script>
+
+      const appHeight = () => {
+        const doc = document.documentElement;
+
+        document.querySelector('.hero__inner').style.minHeight = `${window.innerHeight}px`;
+      }
+
+      window.addEventListener("resize", appHeight)
+
+      window.addEventListener("DOMContentLoaded", () => {
+        appHeight();
+      });
+
+      appHeight()
+    </script>
+
     <script>
       // Set the options globally
       // to make LazyLoad self-initialize
-      window.lazyLoadOptions = {
-      };
+      window.lazyLoadOptions = {};
     </script>
 
     <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
