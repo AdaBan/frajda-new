@@ -26,13 +26,16 @@
     <main tabindex="-1" id="main-content">
       {% block content %}{% endblock %}
     </main>
-
-    <!-- TODO: move js do _data files -->
-    {# lazy loading script #}
-    <script type="module" async>
-      import Lazyload from 'https://cdn.skypack.dev/vanilla-lazyload';
-      const lazyload = new Lazyload();
+    
+    
+    <script>
+      // Set the options globally
+      // to make LazyLoad self-initialize
+      window.lazyLoadOptions = {
+      };
     </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
 
     {# mobile navigation script #}
     <script async>
@@ -187,6 +190,7 @@
       scrollTrigger('.fade-in', {threshold: .3})
     </script>
 
+    {# lottie #}
     <script>
       document
         .body
@@ -210,13 +214,14 @@
       if (isDesktop) {
         include('https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js');
 
-         document
-        .body
-        .classList
-        .add('lottie');
+        document
+          .body
+          .classList
+          .add('lottie');
       }
     </script>
 
+    {# cursor animation #}
     <script defer>
       const $circle = document.querySelector('.cursor-dot');
 
