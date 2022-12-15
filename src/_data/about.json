@@ -1,10 +1,10 @@
 {
     "title": "About us",
     "description": {
-        "lead": "We are a product designer and a frontend developer duo.",
-        "body": "Our goal is to deliver high quality interfaces that solve business problems and offer a first-class experience to the users.",
+        "lead": "We are a product designer and a front-end developer duo.",
+        "body": "Our goal is to deliver high-quality interfaces that solve business problems and offer a first-class experience to users.",
         "small": {
-           "line1": "We're driven to work with kind people",
+           "line1": "We're excited to work with kind people",
            "line2": "who believe that open communication",
            "line3": "is the key to creating great products."
         }
@@ -28,7 +28,7 @@
                     "href": "https://www.linkedin.com/in/paulina-jadeszko/"
                 }
             ],
-            "description": "I am a Product Designer with over 5 years of experience that I have gained in small agencies, software houses and startups. At that time, I had the opportunity to design mobile applications, web applications and websites for organizations of all sizes from industries such as e-commerce, FinTech, aviation and education. My goal is to maintain a high standard of usability, and user experience and take care of every detail of the visual part of the project."
+            "description": "I am a Product Designer with over five years of experience that I have gained in small agencies, software houses, and startups. At that time, I had the opportunity to design mobile applications, web applications, and websites for organizations of all sizes from industries such as e-commerce, FinTech, aviation, and education. My goal is to maintain a high standard of usability and user experience. I take care of every detail of the visual part of the project."
         },
         {
             "name": "Ada Banaszak",
@@ -43,7 +43,7 @@
                     "href": "https://www.instagram.com/ada.banaszak/"
                 }
             ],
-            "description": "I’m a cultural studies graduate turned front-end developer. I’ve gained my professional experience working for various clients in the Warsaw branch of the global advertising agency Saatchi&Saatchi and in a software house SYZYGY, as well as being an in-house front-end developer for a fast-growing fem-tech startup. While coding, I care about user experience, performance, and reusability of code. While communicating, I value transparency, mutual respect, kindness, and a sense of humor."
+            "description": "I am a cultural studies graduate turned front-end developer. I've gained professional experience working for various clients in a global advertising agency and a small software house. I was also an in-house front-end developer for a fast-growing fem-tech startup. While coding, I care about user experience, performance, and code reusability. While communicating, I value transparency, mutual respect, kindness, and a sense of humor."
         }
     ]
 }
