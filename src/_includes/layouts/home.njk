@@ -108,7 +108,7 @@
                       <img class="project__image lazy fade-in" data-src="{{ asset.url | url }}" alt="{{ asset.alt }}"/>
                     {% endif %}
                     {% if asset.videoUrl %}
-                      <video class="project__image lazy fade-in" data-src="{{ asset.videoUrl| url }}" autoplay loop muted playsinline>
+                      <video class="project__image project__image--auto lazy fade-in" data-src="{{ asset.videoUrl| url }}" autoplay loop muted playsinline>
                         <source data-src="{{ asset.videoUrl| url }}" type="video/mp4"/>
                       Sorry, your browser doesn't support embedded videos.
                     </video>
