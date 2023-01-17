@@ -1126,10 +1126,12 @@ svg {
     border-radius: 1.25rem;
   }
   .project__image {
-    aspect-ratio: auto;
     flex-basis: 0;
     flex-grow: 0;
     flex-shrink: 0;
+  }
+  .project__image--auto {
+    aspect-ratio: auto;
   }
   .project__testimonial {
     padding: 8rem 0 4rem;
