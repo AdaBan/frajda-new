@@ -883,38 +883,6 @@
     </script>
 
     
-    <script defer>
-      const $circle = document.querySelector('.cursor-dot');
-
-      const hasCursor = window
-        .matchMedia('(hover: hover)')
-        .matches;
-
-      if (hasCursor) {
-        include('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js');
-
-        document
-          .body
-          .addEventListener("mousemove", (e) => {
-
-            let mapper = gsap
-              .utils
-              .mapRange(0, 30, 0, 1);
-            let speed = Math.abs(e.movementX) + Math.abs(e.movementY)
-            let mappedSpeed = mapper(speed);
-            let clamp = gsap
-              .utils
-              .clamp(0, 1)
-
-            gsap.to($circle, 0.3, {
-              x: e.clientX + 32,
-              y: e.clientY + 32,
-              scale: clamp(mappedSpeed) + .5,
-              ease: 'in-out'
-            });
-          });
-
-      }
-    </script>
+    
   </body>
 </html>
