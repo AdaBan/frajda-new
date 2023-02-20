@@ -752,9 +752,9 @@ svg {
 }
 .button__icon {
   display: block;
-  width: 0.8em;
+  width: 1em;
   height: 1.5em;
-  transition: 0.3s linear;
+  transition: 0.25s ease-in-out;
   transform-origin: center;
 }
 .button:hover .button__icon {
@@ -1369,7 +1369,7 @@ svg {
 .site-head__nav-toggle.-is-reversed {
   color: #fff;
 }
-.site-head__availability {
+.site-head__cta, .site-head__availability {
   display: none;
 }
 @media (min-width: 1024px) {
@@ -1386,25 +1386,9 @@ svg {
   .site-head__nav-toggle {
     display: none;
   }
-  .site-head__availability {
-    display: block;
+  .site-head__cta {
+    display: inline-flex;
     position: relative;
-    padding-left: 1.25rem;
-    font-weight: 400;
-  }
-  .site-head__availability::before, .site-head__availability::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: calc(50% - 0.25rem);
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
-    background: #464A31;
-  }
-  .site-head__availability::before {
-    animation: pulse 1s infinite alternate;
-    opacity: 0.3;
   }
 }
 
