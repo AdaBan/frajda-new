@@ -557,6 +557,7 @@ a:not([class]) {
   color: currentColor;
 }
 
+:focus-visible,
 :focus {
   outline: 2px solid #D1570E;
 }
@@ -565,12 +566,12 @@ main:focus {
   outline: none;
 }
 
-a:not(.no-decor) {
+a:not(.no-decor):not(.button) {
   position: relative;
   color: inherit;
   text-decoration: none;
 }
-a:not(.no-decor)::before {
+a:not(.no-decor):not(.button)::before {
   content: "";
   position: absolute;
   top: 90%;
@@ -581,12 +582,12 @@ a:not(.no-decor)::before {
   transform: scaleX(1);
 }
 @media (hover: hover) {
-  a:not(.no-decor)::before {
+  a:not(.no-decor):not(.button)::before {
     pointer-events: none;
     transform-origin: right;
     transition: transform 0.25s;
   }
-  a:not(.no-decor):hover::before {
+  a:not(.no-decor):not(.button):hover::before {
     transform-origin: left;
     transform: scaleX(0);
   }
@@ -736,6 +737,30 @@ svg {
   }
 }
 
+.button {
+  display: inline-flex;
+  padding: 0.75rem 1.5rem;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #1C1A1A;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.button__icon {
+  display: block;
+  width: 0.8em;
+  height: 1.5em;
+  transition: 0.3s linear;
+  transform-origin: center;
+}
+.button:hover .button__icon {
+  transform: rotate(45deg);
+}
+
 @keyframes blink {
   0% {
     opacity: 0;
@@ -776,7 +801,7 @@ svg {
   text-indent: 3ch;
 }
 .footer__major {
-  margin: 3rem 0 1.5rem;
+  margin: 3rem 0 0;
   font-size: clamp(1.75rem, 8.5vw, 3.5rem);
   line-height: 1.25;
 }
@@ -796,6 +821,22 @@ svg {
 }
 .footer__surprise {
   display: none;
+}
+.footer__cta {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+.footer__email {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  margin-top: 2rem;
+}
+@media (min-width: 768px) {
+  .footer__cta {
+    margin-top: 2.5rem;
+    width: auto;
+  }
 }
 @media (min-width: 1024px) {
   .footer {
@@ -1233,6 +1274,16 @@ svg {
 }
 .services-list__item-description, .services-list__item-tags {
   padding-top: 1.5rem;
+}
+.services-list__cta {
+  margin-top: 2rem;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .services-list__cta {
+    margin-top: 3rem;
+    width: auto;
+  }
 }
 @media (min-width: 1024px) {
   .services-list {
