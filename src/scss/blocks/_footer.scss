@@ -47,7 +47,7 @@
   }
 
   &__major {
-    margin: 3rem 0 1.5rem;
+    margin: 3rem 0 0;
     font-size: $font-size-h-2;
     line-height: 1.25;
   }
@@ -72,6 +72,25 @@
 
   &__surprise {
     display: none;
+  }
+
+  &__cta {
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+
+  &__email  {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    margin-top: 2rem;
+  }
+
+  @include media-query('md') {
+    &__cta {
+      margin-top: 2.5rem;
+      width: auto;
+    }
   }
 
   @include media-query('lg') {
@@ -125,7 +144,7 @@
 
   @media (hover: hover) {
     &__contact a:hover + .footer__surprise {
-        opacity: 1 !important;
+      opacity: 1 !important;
     }
   }
 }

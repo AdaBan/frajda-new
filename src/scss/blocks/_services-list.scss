@@ -108,6 +108,18 @@ $decor-width: .666em;
         padding-top: 1.5rem;
     }
 
+    &__cta {
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    @include media-query('md') {
+        &__cta {
+            margin-top: 3rem;
+            width: auto;
+        }
+    }
+
     @include media-query('lg') {
         position: relative;
         width: 100%;

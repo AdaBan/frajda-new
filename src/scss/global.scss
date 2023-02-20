@@ -61,6 +61,7 @@ a:not([class]) {
   color: currentColor;
 }
 
+:focus-visible,
 :focus {
   outline: 2px solid get-color('primary');
 }
@@ -69,7 +70,7 @@ main:focus {
   outline: none;
 }
 
-a:not(.no-decor) {
+a:not(.no-decor):not(.button) {
   position: relative;
   color: inherit;
   text-decoration: none;
@@ -131,6 +132,7 @@ svg {
 // Import blocks
 @import 'blocks/author';
 @import 'blocks/about';
+@import 'blocks/button';
 @import 'blocks/footer';
 @import 'blocks/glide';
 @import 'blocks/hero';

@@ -61,6 +61,15 @@
                   {% endfor %}
                 </ul>
                 <p class="services-list__item-description">{{ item.description }}</p>
+                <a
+                  href="https://8izode89ayf.typeform.com/to/Ll8jgLb4"
+                  target="_blank"
+                  rel="nofollow"
+                  class="services-list__cta button"
+                >
+                  Send inquiry
+                  <i class="button__icon">{% svg "new-tab" %}</i>
+                </a>
               </div>
             </li>
           {% endfor %}
@@ -186,7 +195,7 @@
       </div>
     </section>
     <div style="position: relative;">
-        <div class="section__anchor" id="contact" data-anchor></div>
+      <div class="section__anchor" id="contact" data-anchor></div>
     </div>
   </div>
 
@@ -202,8 +211,17 @@
           <p class="footer__small">Current time <span data-current-time></span></p>
         </div>
         <div class="footer__contact">
-          <p class="footer__major">We are available for new projects. Let’s have a chat!</p>
-          <a class="footer__address" href="mailto:hello@frajda.studio">hello@frajda.studio</a>
+          <p class="footer__major">Ready to build something together?</p>
+          <a
+            href="https://8izode89ayf.typeform.com/to/Ll8jgLb4"
+            target="_blank"
+            rel="nofollow"
+            class="footer__cta button"
+          >
+            Get in touch
+            <i class="button__icon">{% svg "new-tab" %}</i>
+          </a>
+
           <video class="footer__surprise lazy" data-src="/assets/footer/contact.mp4" autoplay loop muted playsinline>
             <source data-src="{{ asset.videoUrl| url }}" type="video/mp4"/>
           </video>
@@ -214,7 +232,11 @@
               <a href="{{ link.href }}" target="_blank">{{ link.name }}</a>
             </li>
           {% endfor %}
+          <li class="footer__link-wrapper">
+            <a class="footer__email no-decor" href="mailto:hello@frajda.studio">hello@frajda.studio</a>
+          </li>
         </ul>
+
       </footer>
 
     {% endblock %}
