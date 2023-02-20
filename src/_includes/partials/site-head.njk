@@ -3,7 +3,7 @@
   <div class="container">
     <div class="site-head__inner">
       <a class="site-head__brand no-decor" href="/" aria-label="{{ site.name }} - home" data-brand>
-         {% svg "logo" %}
+        {% svg "logo" %}
       </a>
 
       <button class="site-head__nav-toggle" aria-label="Open navigation" data-nav-open>
@@ -12,27 +12,36 @@
       <button class="site-head__nav-toggle -is-hidden" aria-label="Open navigation" data-nav-close>
         {% svg "close" %}
       </button>
-  
+
       <nav
         class="site-head__nav nav"
         aria-label="Primary navigaton"
         data-nav
       >
-      
+
         <ul class="nav__list" data-nav-links>
           {% for item in navigation.items %}
-          <li class="nav__item">
-            <a
+            <li class="nav__item">
+              <a
               class="nav__link no-decor"
               href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}
             >
-              {{ item.text }}
-            </a>
-          </li>
+                {{ item.text }}
+              </a>
+            </li>
           {% endfor %}
         </ul>
       </nav>
-      <strong class="site-head__availability">Available for work</strong>
+      <a
+        href="https://8izode89ayf.typeform.com/to/Ll8jgLb4"
+        target="_blank"
+        rel="nofollow"
+        class="site-head__cta button"
+      >
+        Start a project
+        <i class="button__icon">{% svg "new-tab" %}</i>
+      </a>
+      {# <strong class="site-head__availability">Available for work</strong> #}
     </div>
   </div>
 </header>
